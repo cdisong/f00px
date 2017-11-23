@@ -1,5 +1,8 @@
 import React from 'react'; 
 import SessionFormContainer from './sessionform/session_form_container';
+import GreetingContainer from './greeting/greeting_container'; 
+
+
 import {
   Route,
   Redirect,
@@ -14,21 +17,10 @@ export const App = () => (
       <Link to="/" className="header-link"> 
       <h1>F00PX</h1> 
       </Link>
+      <Route path="/" component={GreetingContainer} />
     </header>
+    
     <Route path="/login" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />
   </div> 
 ); 
-
-// <Link to="/" className="header-link">
-// <h1>Bench BnB</h1>
-// </Link>
-// <GreetingContainer />
-// </header>
-// <Switch>
-// <AuthRoute path="/login" component={SessionFormContainer} />
-// <AuthRoute path="/signup" component={SessionFormContainer} />
-// <ProtectedRoute path="/benches/new" component={BenchFormContainer} />
-// <Route path="/benches/:benchId" component={BenchShowContainer} />
-// <Route exact path="/" component={SearchContainer} />
-// </Switch>
