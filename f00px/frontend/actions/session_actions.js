@@ -14,23 +14,21 @@ export const receiveErrors = errors => ({
 });
 
 export const signup = user => dispatch => (
-  APIUtil.signUp(user).then(formUser => (
-    dispatch(receiveCurrentUser(formUser))
+  APIUtil.signUp(user).then(user => (
+    dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
 
 export const login = user => dispatch => (
-  APIUtil.logIn(user).then(cUser => (
-    dispatch(receiveCurrentUser(cUser))
+  APIUtil.logIn(user).then(user => (
+    dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
 
 export const logout = () => dispatch => (
-  APIUtil.logOut().then(user => (
-    dispatch(receiveCurrentUser(null))
-  ))
+  APIUtil.logOut().then(user => (dispatch(receiveCurrentUser(null))))
 );
