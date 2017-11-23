@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
       params[:user][:password]
     )
     if @user.nil?
-      flash.now[:errors] = 'Invalid Credentials'
+      render json: ['Invalid Credentials'], status 400
     else 
       login(@user)
       render 'api/users/show';

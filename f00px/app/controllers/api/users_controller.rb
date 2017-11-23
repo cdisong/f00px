@@ -11,9 +11,8 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save 
       login(@user)
-      render :show 
+      render "api/users/show"
     else 
-      flash.now[:errors] = @user.errors 
       render json: @user.errors.full_messages, status: 422
     end 
   end
@@ -24,7 +23,8 @@ class Api::UsersController < ApplicationController
       @user.destroy 
       render :show 
     else 
-      flash.now[:errors] = ['No User To Destroy']
+      render json: ['No user to destroy'], status: 404
+    end 
   end
 
   def update
@@ -32,13 +32,13 @@ class Api::UsersController < ApplicationController
     if @user && @user.update_attributes(user_parms)
       render :show 
     else 
-      render json: @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 400
     end 
   end
   
   private 
   def user_params 
-    params.require(:user).permit(:username, :pasword)
+    params.require(:user).permit(:username, :password)
   end 
 end
 
