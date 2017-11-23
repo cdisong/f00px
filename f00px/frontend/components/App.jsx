@@ -18,9 +18,11 @@ export const App = () => (
       <h1>F00PX</h1> 
       </Link>
       <Route path="/" component={GreetingContainer} />
+      {/* <Route exact path="/" component={SplashContainer} /> */}
     </header>
     
     <Route path="/login" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />
   </div> 
 ); 
+
