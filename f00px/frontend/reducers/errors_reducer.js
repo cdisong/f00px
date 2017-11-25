@@ -1,8 +1,18 @@
-import { combineReducers } from 'redux';
-import { sessionErrorsReducer } from './session_errors_reducer';
+import { merge } from 'lodash';
 
-const errorsReducer = combineReducers({
-  session: sessionErrorsReducer
-});
+import { CLEAR_ERRORS, RECEIVE_SESSION_ERRORS } from '../actions/session_actions';
+const errorsReducer = (state = [], action) => {
+  Object.freeze(state); 
+  switch(action.type) {
+    case RECEIVE_SESSION_ERRORS: 
+      return merge([], state, action.errors); 
+    case CLEAR_ERRORS: 
+      return []; 
+    default: 
+      return state; 
+  }
+};
+
+
 
 export default errorsReducer;
