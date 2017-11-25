@@ -2,7 +2,7 @@ import React from 'react';
 import SessionFormContainer from './sessionform/session_form_container';
 import GreetingContainer from './greeting/greeting_container'; 
 import { AuthRoute } from '../util/route_util';
-
+import SplashContainer from './splash/splashpage';
 import {
   Route,
   Redirect,
@@ -17,10 +17,11 @@ export const App = () => (
       <Link to="/" className="header-link"> 
       <h1>F00PX</h1> 
       </Link>
+      <Route path="/" component={GreetingContainer} />
+      <Route path="/" component={SplashContainer}/>
       {/* <Route exact path="/" component={SplashContainer} /> */}
     </header>
     <Switch>
-      <Route path="/" component={GreetingContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch> 
