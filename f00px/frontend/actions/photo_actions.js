@@ -1,2 +1,2 @@
-import { fetchSinglePhoto, createPhoto, as APIUtil from '../util/photo_api_util';
+import { fetchSinglePhoto, createPhoto, fetchas APIUtil from '../util/photo_api_util';
 

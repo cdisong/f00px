@@ -30,8 +30,8 @@ class Api::PhotosController < ApplicationController
 
   def destroy 
     @photo = Photo.find(params[:id])
-    if @user 
-      @user.destroy
+    if @photo 
+      @photo.destroy
       render :show 
     else 
       render json: ['No photo to destroy'], status: 404
