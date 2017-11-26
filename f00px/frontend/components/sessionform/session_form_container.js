@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors
-  };
+  }; 
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {
@@ -27,3 +27,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SessionForm);
+ 

@@ -1,5 +1,5 @@
 import { merge } from 'lodash'; 
-import {CLEAR_ERRORS, RECEIVE_ERRORS } from '../actions/photo_actions';
+import { CLEAR_ERRORS, RECEIVE_ERRORS } from '../actions/photo_actions';
 
 const photoErrorsReducer = (state = [], action) => {
   Object.freeze(state); 

@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = {
       username: "",
       password: "",
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
       <ul>
         {this.props.errors.session.map((error, i) => (
           <li key={`error-${i}`}>
-              {error}
+            {error}
           </li>
         ))}
       </ul>
