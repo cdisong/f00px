@@ -19,21 +19,36 @@ export const clearErrors = () => ({
 });
 
 export const signup = user => dispatch => (
-  APIUtil.signUp(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  APIUtil.signUp(user)
+  .then(
+    fuser => {
+      dispatch(receiveCurrentUser(fuser));
+      dispatch(clearErrors());
+    }, 
+    error => (
+      dispatch(receiveErrors(error.responseJSON))
+    )
+  )
 );
 
 export const login = user => dispatch => (
-  APIUtil.logIn(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  APIUtil.logIn(user)
+  .then(
+    fuser => {
+      dispatch(receiveCurrentUser(fuser));
+      dispatch(clearErrors());
+    }, 
+    error => (
+      dispatch(receiveErrors(error.responseJSON))
+    )
+  )
 );
 
 export const logout = () => dispatch => (
-  APIUtil.logOut().then(user => (dispatch(receiveCurrentUser(null))))
+  APIUtil.logOut()
+  .then(
+    user => (
+      dispatch(receiveCurrentUser(null))
+    )
+  )
 );
