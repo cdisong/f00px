@@ -10,7 +10,6 @@ const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
 class PhotoUpload extends React.Component {
   constructor(props) {
     super(props); 
-    console.log(this.props);
     this.state = {
       image_url: "",
       description: "",
@@ -99,7 +98,6 @@ class PhotoUpload extends React.Component {
             </label>
           </div>
           {this.renderErrors()}
-
           <input type="submit" value="Upload"/>
         </div> 
       </form> 
