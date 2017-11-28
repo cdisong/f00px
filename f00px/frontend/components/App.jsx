@@ -4,6 +4,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splashpage';
 import PhotoUploadContainer from './photosupload/photo_upload_container';
+import PhotosIndexContainer from './photosdashboard/photos_index_container';
 import {
   Route,
   Redirect,
@@ -25,7 +26,9 @@ export const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/photoupload" component={PhotoUploadContainer} /> 
+      <Route path="/dashboard" component={PhotosIndexContainer} /> 
     </Switch> 
   </div> 
 ); 
 
+  
