@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout, login } from '../../actions/session_actions'; 
+import { logout, login, signup } from '../../actions/session_actions'; 
 
 import Greeting from './greeting';
 
@@ -8,12 +8,13 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log(ownProps);
   const formType = ownProps.location.pathname.slice(1); 
 
   return{
     formType, 
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    login: () => dispatch(login()),
+    signup: () => dispatch(signup())
   };
 };
 

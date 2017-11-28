@@ -11,11 +11,11 @@ class PhotoIndexItem extends React.Component {
   render() {
     const { photo } = this.props; 
     return(
-      <div>
-        <div className="photo-item">
+      <div> 
+        <span className="photo-item">
           <img src={photo.image_url} alt="{photo.description}"/>
           <h1>{photo.description}</h1>
-        </div>
+        </span>
       </div>
     );
   }
