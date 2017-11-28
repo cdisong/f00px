@@ -6,13 +6,12 @@ import {
   receiveErrors, 
   clearErrors 
 } from '../../actions/photo_actions';
-import { selectPhotos } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser, 
-    errors: state.errors, 
-    photos: selectPhotos(state)
+    errors: state.errors,
+    photos: Object.values(state.entities.photos)
   };
 };
 
@@ -25,3 +24,5 @@ export default connect(
   mapStateToProps, 
   mapDispatchToProps
 )(PhotosIndex);
+
+

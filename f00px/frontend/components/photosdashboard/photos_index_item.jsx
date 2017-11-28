@@ -1,26 +1,24 @@
-import React from 'react'; 
+import React from 'react';
+import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router-dom'; 
-import PhotoIndex from './photos_index';
+import merge from 'lodash/merge';
 
-class PhotosIndexItem extends React.Component {
-  componentDidMount() {
-    this.props.getAllPhotos();
+
+class PhotoIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  render () {
-    const {photos} = this.props; 
-
+  render() {
+    const { photo } = this.props; 
     return(
-      <div className="photo-boxes"> 
-        {photos.map((photo)=> {
-          return (
-            <PhotoIndex 
-              key={photo.id}
-              photo={photo} />
-          );
-        })}
+      <div>
+        <div className="photo-item">
+          <img src={photo.image_url} alt="{photo.description}"/>
+          <h1>{photo.description}</h1>
+        </div>
       </div>
     );
   }
 }
 
-export default withRouter(PhotosIndexItem);
+export default PhotoIndexItem;

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchAllPhotos = fetchAllPhotos; 
   window.createPhoto = createPhoto; 
   window.deletePhoto = deletePhoto; 
-  window.updatePhoto = updatePhoto;
+  // window.updatePhoto = updatePhoto;
   ReactDOM.render(<Root store={store}/>, root);
   // ReactDOM.render(<h1>this is from entryfile</h1>, root);
 

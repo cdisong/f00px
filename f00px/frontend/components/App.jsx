@@ -25,7 +25,7 @@ export const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <ProtectedRoute path="/photoupload" component={PhotoUploadContainer} /> 
+      <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <Route path="/dashboard" component={PhotosIndexContainer} /> 
     </Switch> 
   </div> 
