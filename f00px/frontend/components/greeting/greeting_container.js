@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { logout, login, signup } from '../../actions/session_actions'; 
+import { logout } from '../../actions/session_actions'; 
+import { createSinglePhoto } from '../../actions/photo_actions';
 
 import Greeting from './greeting';
 
@@ -13,8 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return{
     formType, 
     logout: () => dispatch(logout()),
-    login: () => dispatch(login()),
-    signup: () => dispatch(signup())
+    uploadPhoto: () => dispatch(createSinglePhoto()),
   };
 };
 

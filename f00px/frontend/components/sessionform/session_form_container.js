@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import { receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
-
+// import { disconnect } from 'cluster';
 
 
 
@@ -13,6 +13,15 @@ const mapStateToProps = (state) => {
     errors: state.errors
   }; 
 };
+
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     login: user => dispatch(login(user)), 
+//     logout: () => dispatch(logout()),
+//     signup: user => dispatch(signup(user)), 
+//   };
+// };
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname.slice(1);

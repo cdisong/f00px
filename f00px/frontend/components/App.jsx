@@ -17,13 +17,14 @@ export const App = () => (
   <div> 
     <header>
       <Link to="/" className="header-link"> 
-      <Route path="/" component={GreetingContainer} />
+      <AuthRoute path="/" component={GreetingContainer} />
+      <ProtectedRoute path="/" component={GreetingContainer} />
       </Link>
       <Route exact path="/" component={SplashContainer}/>
     </header>
-    <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+    <Switch>
       <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
     </Switch> 

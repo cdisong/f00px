@@ -26,6 +26,7 @@ photo2 = Photo.create!(description: "westtoucla", author_id: demouser.id, image_
 photo3 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845937/citypark.png")
 photo4 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845910/herebedragons.png")
 photo5 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845910/zionredwalls.png")
+photo36 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511892806/portlanddusk.png")
 photo6 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845894/uclajungle.png")
 photo7 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845881/tennyson.png")
 photo8 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845860/icelick.png")
@@ -74,4 +75,3 @@ photo33 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "h
 photo34 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844465/dtusc_nmcunc.png")
 
 photo35 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844461/sdsunset_f6nbla.png")
-
