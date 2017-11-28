@@ -13,14 +13,16 @@ class PhotosIndex extends React.Component {
     const {photos} = this.props; 
 
     return(
-      <div className="grid"> 
-        {this.props.photos.map((photo)=> {
-          return (
-            <PhotoIndexItem 
-              key={photo.id}
-              photo={photo} />
-          );
-        })}
+      <div className="grid-container">
+        <div className="grid"> 
+          {this.props.photos.map((photo)=> {
+            return (
+              <PhotoIndexItem 
+                key={photo.id}
+                photo={photo} />
+            );
+          })}
+        </div>
       </div>
     );
   }

@@ -27,9 +27,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link to="/signup">SIGN UP instead</Link>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <Link to="/login">LOGIN instead</Link>;
     }
   }
 
@@ -61,34 +61,40 @@ class SessionForm extends React.Component {
 
   render() {
     return ( 
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-modal">
-          Welcome! Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
-          <div className="login-form">
-          <label>Username 
-            <input 
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-            />
-          </label>
-          <br/>
-          <label>Password 
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"
-            />
-          </label>
-          <br/>
-          <button onClick={this.handleClick}>Demo Login</button>
-          <br/>
-          <input type="submit" value="Submit"/>
-          </div>
-        </form> 
+      <div className="login-background">
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-modal">
+            <section className="login-text"> 
+              Welcome! Please {this.props.formType} or {this.navLink()}
+              <br/>
+              {this.renderErrors()}
+              <br/>
+              <div className="login-form">
+                <label>Username 
+                  <input 
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <label>Password 
+                  <input 
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                  />
+                </label>
+              <br/>
+              <button onClick={this.handleClick}>Demo Login</button>
+              <br/>
+              <input type="submit" value="Submit"/>
+              </div>
+            </section>
+          </form> 
+        </div>
       </div>
     );
   }

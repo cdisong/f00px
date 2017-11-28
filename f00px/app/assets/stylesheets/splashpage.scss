@@ -27,3 +27,59 @@
   background: rgba(134, 40, 40, 0.15);
   width: 150px;
 }
+
+.login-signup-splash-header {
+  display: flex; 
+  align-content: flex-end;
+  border: 1px solid black;
+}
+
+.login-signup-splash-header > a {
+  display: flex; 
+  justify-content: flex-end;
+}
+// .splash-page {
+//   background: image-url("sdsunsetr.jpg");
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   position: relative;
+//   height: 800px;
+// }
+
+// .splash-page-text {
+//   color: black;
+//   text-align: center;
+//   font-family: 'Times New Roman', Times, serif;
+//   font-size: 20px;
+//   position: absolute;
+//   top: 45%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   margin: 10px 0px;
+// }
+
+// .splash-page-text > button {
+//   font-family: 'Times New Roman', Times, serif;
+//   font-size: 20px;
+//   padding: 10px;
+//   background: rgba(134, 40, 40, 0.15);
+//   width: 150px;
+// }
+
+// // .login-signup-splash-header {
+// //   background-color: rgba(134, 40, 40, 0.15);
+// // }
+
+// // .login-link {
+// //   display: flex;
+// //   border: 1px solid black; 
+// //   justify-content: right;
+// // }
+
+// // .signup-link {
+// //   display: flex;
+// //   border: 1px solid black;
+// //   align-content: right;
+// // }

@@ -22,12 +22,13 @@ class SplashPage extends React.Component {
     return ( 
       <div>
         <header className="login-signup-splash-header"> 
-          <Link to="/login">log in</Link>
-          <Link to="/signup">sign up </Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
         </header> 
         <section className="splash-page"> 
           <section className="splash-page-text"> 
             <h1>Welcome to F00PX</h1>
+            <br/>
             <button onClick={this.demoUser}>Demo Login</button>
           </section>
         </section>

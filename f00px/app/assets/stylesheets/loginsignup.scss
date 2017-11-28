@@ -1,0 +1,65 @@
+.login-background {
+  background: image-url("sdsunsetr.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.login-form-container {
+  // border: 3px solid black;
+  flex-direction: column;
+  justify-content: space-around;
+  // height: 800px;
+  // font-family: 'Times New Roman', Times, serif;
+  // font-size: 20px;
+  align-items: center;
+  display: flex;
+  background-color: #0000009c;
+  color:#bbb39e;
+}
+.login-form-modal {
+  padding: 12px;
+  align-content: center;
+}
+
+.login-text{
+  align-content: center;
+}
+
+.login-input{
+  border: 1px solid #bbb39e;
+  display: flex;
+  align-content: center;
+}
+
+.login-text > button {
+  display: block;
+  border: 1px solid #bbb39e;
+}
+
+// .splash-page-text {
+//   color: black;
+//   text-align: center;
+//   font-family: 'Times New Roman', Times, serif;
+//   font-size: 20px;
+//   position: absolute;
+//   top: 35%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   margin: 10px 0px;
+// }
+
+// .splash-page-text > button {
+//   font-family: 'Times New Roman', Times, serif;
+//   font-size: 20px;
+//   padding: 10px;
+//   background: rgba(134, 40, 40, 0.15);
+//   width: 150px;
+// }

@@ -30,7 +30,7 @@ photo36 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "h
 photo6 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845894/uclajungle.png")
 photo7 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845881/tennyson.png")
 photo8 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845860/icelick.png")
-photo9 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845830/coldmountain.png")
+photo9 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511898158/coldmountain.png")
 photo10 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845819/itchyteeth.png")
 photo11 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845794/solitude.png")
 photo12 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845780/babblingbrook.png")
@@ -39,9 +39,9 @@ photo14 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "h
 photo15 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845745/zionriver.png")
 photo16 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845735/ziontemple.png")
 
+photo18 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845713/latesummerdays.jpg")
 photo17 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845717/shadesandshadows.jpg")
 
-photo18 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845713/latesummerdays.jpg")
 
 photo19 = Photo.create!(description: "hi", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845693/californiaafterglow.jpg")
 

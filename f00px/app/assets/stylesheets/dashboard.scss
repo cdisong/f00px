@@ -1,13 +1,18 @@
 
 
-
+.grid-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin: 10px;
+}
 .grid,
 .grid-home {
   line-height: 5px;
-  column-count: 5;
+  column-count: 4;
   column-gap: 5px;  
 }
 
-.photo-item {
-  padding: 2.5px;
+.photo-item img {
+  margin-bottom: 5px;
 }
