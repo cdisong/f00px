@@ -1,0 +1,29 @@
+.splash-page {
+  background: image-url("sdsunsetr.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  height: 800px;
+}
+
+.splash-page-text {
+  color: black;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10px 0px;
+}
+
+.splash-page-text > button {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding: 10px;
+  background: rgba(134, 40, 40, 0.15);
+  width: 150px;
+}
