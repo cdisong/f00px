@@ -13,7 +13,7 @@ class PhotosIndex extends React.Component {
     const {photos} = this.props; 
 
     return(
-      <div className="photo-boxes"> 
+      <div className="grid"> 
         {this.props.photos.map((photo)=> {
           return (
             <PhotoIndexItem 

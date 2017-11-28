@@ -1,11 +1,13 @@
 
 
-.photo-item {
-  display: block;
-  height: 50%;
-  width: 50%;
-  margin: 10px;
-  border: 1px solid black;
-  float: left;
 
+.grid,
+.grid-home {
+  line-height: 5px;
+  column-count: 5;
+  column-gap: 5px;  
+}
+
+.photo-item {
+  padding: 2.5px;
 }

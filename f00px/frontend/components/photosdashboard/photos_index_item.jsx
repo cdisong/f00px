@@ -14,7 +14,7 @@ class PhotoIndexItem extends React.Component {
       <div> 
         <span className="photo-item">
           <img src={photo.image_url} alt="{photo.description}"/>
-          <h1>{photo.description}</h1>
+        
         </span>
       </div>
     );

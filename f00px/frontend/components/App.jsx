@@ -17,7 +17,6 @@ export const App = () => (
   <div> 
     <header>
       <Link to="/" className="header-link"> 
-      <h1>F00PX</h1> 
       <Route path="/" component={GreetingContainer} />
       </Link>
       <Route exact path="/" component={SplashContainer}/>
