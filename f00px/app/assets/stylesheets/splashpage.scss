@@ -30,14 +30,11 @@
 
 .login-signup-splash-header {
   display: flex; 
-  align-content: flex-end;
+  justify-items: flex-end;
   border: 1px solid black;
 }
 
-.login-signup-splash-header > a {
-  display: flex; 
-  justify-content: flex-end;
-}
+// s
 // .splash-page {
 //   background: image-url("sdsunsetr.jpg");
 //   background-position: center;

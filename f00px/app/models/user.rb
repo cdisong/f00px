@@ -4,7 +4,32 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
 
   has_many :photos
-  
+  primary_key: :id, 
+  foreign_key: :user_id, 
+  class_name: :Photo 
+
+
+  has_many :users_to_follow, 
+  primary_key: :id, 
+  foreign_key: :following_id, 
+  class_name: :Follow 
+
+  has_many :following_users,
+  primary_key: :id, 
+  foreign_key: :follower_id, 
+  class_name: :Follow 
+
+  has_many :followees 
+  through: :following_users, 
+  source: :follower 
+
+
+  has_many :followers 
+  through: :users_to_follow, 
+  source: :following 
+
+
+
   attr_reader :password 
 
   after_initialize :ensure_session_token 

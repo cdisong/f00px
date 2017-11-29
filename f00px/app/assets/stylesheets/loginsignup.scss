@@ -13,6 +13,7 @@
 }
 
 .login-form-container {
+  display: flex;
   // border: 3px solid black;
   flex-direction: column;
   justify-content: space-around;
@@ -20,7 +21,6 @@
   // font-family: 'Times New Roman', Times, serif;
   // font-size: 20px;
   align-items: center;
-  display: flex;
   background-color: #0000009c;
   color:#bbb39e;
 }
