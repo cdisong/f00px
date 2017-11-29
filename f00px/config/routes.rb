@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    get 'followers/create'
-  end
-
-  namespace :api do
-    get 'followers/destroy'
-  end
-
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:new, :create, :show, :index, :edit, :update, :destroy]
     resource :session, only: [:create, :destroy]
     resources :photos, only: [:create, :update, :index, :show, :destroy]
+    resources :follows, only: [:create, :destroy]
   end
 
 
