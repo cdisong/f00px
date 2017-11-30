@@ -1,4 +1,9 @@
-import { fetchSinglePhoto, createPhoto, fetchAllPhotos, deletePhoto } from '../util/photo_api_util';
+import { 
+  fetchSinglePhoto, 
+  createPhoto, 
+  fetchAllPhotos, 
+  deletePhoto 
+} from '../util/photo_api_util';
 
 
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'; 

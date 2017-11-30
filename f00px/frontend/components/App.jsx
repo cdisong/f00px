@@ -5,8 +5,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import PhotoUploadContainer from './photosupload/photo_upload_container';
 import PhotosIndexContainer from './photosdashboard/photos_index_container';
+import UserProfileContainer from './userprofile/user_profile_container';
 import {
-  Route,
+Route,
   Redirect,
   Switch,
   Link,
@@ -16,14 +17,15 @@ import {
 export const App = () => (
   <div> 
     <header>
+      <ProtectedRoute path="/" component={GreetingContainer} />
         <Route exact path="/" component={SplashContainer}/>
-        <ProtectedRoute path="/" component={GreetingContainer} />
         <AuthRoute path="/login" component={SessionFormContainer} />
     </header>
     <Switch>
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
+      <ProtectedRoute path="/profile" component={UserProfileContainer} />
     </Switch>
   </div> 
 ); 

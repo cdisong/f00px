@@ -18,7 +18,8 @@ user5 = User.create!(username: "user5", password: "password")
 user7 = User.create!(username: "anna", password: "password")
 user8 = User.create!(username: "chris", password: "password")
 
-
+Follow.create!(follower_id: demouser.id, followed_id: user4.id)
+Follow.create!(follower_id: user4.id, followed_id: demouser.id)
 
 
 photo1 = Photo.create!(description: "earthday2017", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511848535/earthday.png")

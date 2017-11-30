@@ -1,6 +1,6 @@
 class Follow < ApplicationRecord
-validates :follower, :following, presence: true 
-validates :follower, uniqueness: true { scope: following }
+validates :follower, :followed_user, presence: true 
+validates :follower, uniqueness: { scope: :followed_user }
 
 
 

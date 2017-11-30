@@ -13,16 +13,17 @@ class SessionForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/dashboard');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/dashboard');
+  //   }
+  // }
 
   handleSubmit(e) { 
     e.preventDefault(); 
     const user = Object.assign({}, this.state); 
-    this.props.formRender(user); 
+    this.props.formRender(user)
+    .then(() => this.props.history.push('/dashboard'));
   }
 
   navLink() {
@@ -34,11 +35,16 @@ class SessionForm extends React.Component {
   }
 
   handleClick(e) {
+
+    
     let demoUser = { 
       username: "demouser", 
       password: "password"
     }; 
-    this.props.formRender(demoUser);
+    this.props.formRender(demoUser)
+    .then(() => this.props.history.push('/dashboard'));
+    // console.log('asdfasdfs');
+    // console.log(this.props);
   }
   
   renderErrors() {

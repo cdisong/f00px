@@ -3,9 +3,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true 
   validates :password, length: { minimum: 6, allow_nil: true}
 
-  has_many :photos
+  has_many :photos,
   primary_key: :id, 
-  foreign_key: :user_id, 
+  foreign_key: :author_id, 
   class_name: :Photo 
 
 
@@ -32,6 +32,33 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token 
   
+  def photo_ids
+    arr = [] 
+    self.photos.each do |photo|
+      arr << photo.id 
+    end 
+    return arr
+  end 
+
+  def followers 
+    arr = [] 
+    self.users_currently_following.each do |follower| 
+      arr << follower.id 
+    end 
+    return arr 
+  end 
+
+  def followings 
+    arr = [] 
+    self.followers_following.each do |following| 
+      arr << following.id 
+    end 
+    return arr 
+  end 
+
+
+
+
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     return nil unless @user 

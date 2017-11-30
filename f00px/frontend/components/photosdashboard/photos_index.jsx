@@ -10,12 +10,12 @@ class PhotosIndex extends React.Component {
     this.props.getAllPhotos();
   }
   render () {
-    const {photos} = this.props; 
+    const { photos } = this.props; 
 
     return(
       <div className="grid-container">
         <div className="grid"> 
-          {this.props.photos.map((photo)=> {
+          {photos.map((photo)=> {
             return (
               <PhotoIndexItem 
                 key={photo.id}

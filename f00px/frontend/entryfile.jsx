@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { configureStore } from './store/store';
 import Root from './components/root';
 import { logIn, signUp, logOut } from './util/session_api_util'; 
+import { fetchUsers, fetchUser } from './util/user_api_util';
 import { 
   fetchSinglePhoto, 
   fetchAllPhotos, 
@@ -10,6 +11,7 @@ import {
   deletePhoto, 
   updatePhoto
 } from './util/photo_api_util';
+// import { receiveUserPhotos } from '../actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -31,11 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logOut = logOut;
   window.dispatch = store.dispatch; 
   window.store = store;
-  window.store
   window.fetchSinglePhoto = fetchSinglePhoto;
   window.fetchAllPhotos = fetchAllPhotos; 
   window.createPhoto = createPhoto; 
   window.deletePhoto = deletePhoto; 
+  window.fetchUsers = fetchUsers;
+  window.fetchUser = fetchUser;
   // window.updatePhoto = updatePhoto;
   ReactDOM.render(<Root store={store}/>, root);
   // ReactDOM.render(<h1>this is from entryfile</h1>, root);
