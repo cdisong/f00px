@@ -29,6 +29,15 @@ class Greeting extends React.Component {
         <div className="header-group"> 
           <h2 className="header-name"> Hey, {currentUser.username}!</h2> 
           <button className="header-button" onClick={this.props.logout}>Log out</button> 
+          <span>
+            <Link to='/upload'>Upload</Link>
+          </span>
+          <span>
+            <Link to='/dashboard'>Home</Link>
+          </span>
+          <span>
+            <Link to='/profile'>Profile</Link>
+          </span>
         </div>
       );
     }
