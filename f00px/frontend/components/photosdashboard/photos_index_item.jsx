@@ -11,20 +11,20 @@ const style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : '#ccc',
+    backgroundColor : 'rgba(255,255,255, 0.7)',
     zIndex          : 10
   },
   content : {
     position        : 'fixed',
-    top             : '75px',
-    left            : '75px',
-    right           : '75px',
-    bottom          : '75px',
+    top             : '100px',
+    left            : '100px',
+    right           : '100px',
+    bottom          : '100px',
     margin          : 'auto',
-    width           : '150px',
-    height          : '150px',
-    border          : '1px solid #ccc',
-    padding         : '15px 30px',
+    width           : '400px',
+    height          : '400px',
+    // border          : '1px solid #sccc',
+    padding         : '15px',
     zIndex          : 11
 
     // opacity         : '',
@@ -52,6 +52,7 @@ class PhotoIndexItem extends React.Component {
 
   render() {
     const { photo } = this.props; 
+    console.log(this.props);
     return(
       <div> 
         <span className="photo-item">
@@ -64,10 +65,24 @@ class PhotoIndexItem extends React.Component {
           shouldCloseOnOverlayClick={true} 
           contentLabel="Modal"
           style={style}> 
-
-          <button className="close-button" onClick={this.closePhotoDetail}>X</button>
-          <img src={photo.image_url}/> 
-          <h1>{photo.description}</h1>
+          <div className="detail-view">
+            <div className="image">
+              <img src={photo.image_url}/> 
+            </div>
+            <div className="desc">
+              <div className="words">
+              <u>Photographer</u> 
+              </div>
+              {photo.author.username}
+              <br/>
+              <br/>
+              <br/>
+              <div className="words">
+              <u>Description</u>
+              </div>
+              {photo.description}
+            </div>
+          </div>
 
         </ReactModal>
         </span>

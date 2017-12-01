@@ -21,23 +21,25 @@ class Greeting extends React.Component {
       );
     }
   }
-
+ 
   personalGreeting(){
     let currentUser = this.props.currentUser; 
     if (currentUser){
       return(
         <div className="header-group"> 
-          <h2 className="header-name"> Hey, {currentUser.username}!</h2> 
-          <button className="header-button" onClick={this.props.logout}>Log out</button> 
-          <span>
-            <Link to='/upload'>Upload</Link>
-          </span>
-          <span>
-            <Link to='/dashboard'>Home</Link>
-          </span>
-          <span>
-            <Link to='/profile'>Profile</Link>
-          </span>
+          <div className="buttons-on-top">
+          <div className="header-name"> Hey, {currentUser.username}!</div> 
+            <button className="header-button" onClick={this.props.logout}>Log out</button> 
+            <span className="upload">
+              <Link to='/upload'>Upload</Link>
+            </span>
+            <span className="dashboard">
+              <Link to='/dashboard'>Home</Link>
+            </span>
+            <span className="profile">
+              <Link to='/profile'>Profile</Link>
+            </span>
+          </div>
         </div>
       );
     }

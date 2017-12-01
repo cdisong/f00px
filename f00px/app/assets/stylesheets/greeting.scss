@@ -1,0 +1,40 @@
+.upload {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.dashboard {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.profile {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.header-button {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.header-name { 
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  // border: 1px solid black;
+  width: 720px;
+  justify-content: flex-start;
+  border-bottom: 1px solid black;
+}
+
+.buttons-on-top {
+  margin-top: 5px;
+  margin-right: 5px;
+  display: flex; 
+  justify-content: flex-end;
+}
