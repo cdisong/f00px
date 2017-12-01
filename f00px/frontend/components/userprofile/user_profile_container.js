@@ -8,7 +8,7 @@ import {
 import UserProfile from './user_profile';
 import { getSinglePhoto, getAllPhotos } from '../../actions/photo_actions'; 
 import {fetchUsers, fetchUser } from '../../actions/user_actions';
-import { selectUsersByFollow } from '../../reducers/selectors';
+import { selectUsersByFollow, selectPhotosByUser } from '../../reducers/selectors';
 const mapStateToProps = (state) => { 
   const currentUser = state.session.currentUser; 
   const followers = selectUsersByFollow(state.entities.users, state.session.currentUser.followers);

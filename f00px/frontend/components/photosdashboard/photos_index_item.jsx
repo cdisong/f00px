@@ -17,7 +17,7 @@ const style = {
   content : {
     position        : 'fixed',
     top             : '100px',
-    left            : '100px',
+    left            : '100px', 
     right           : '100px',
     bottom          : '100px',
     margin          : 'auto',

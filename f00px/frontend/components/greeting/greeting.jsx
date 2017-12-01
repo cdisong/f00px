@@ -30,15 +30,15 @@ class Greeting extends React.Component {
           <div className="buttons-on-top">
           <div className="header-name"> Hey, {currentUser.username}!</div> 
             <button className="header-button" onClick={this.props.logout}>Log out</button> 
-            <span className="upload">
-              <Link to='/upload'>Upload</Link>
-            </span>
-            <span className="dashboard">
-              <Link to='/dashboard'>Home</Link>
-            </span>
-            <span className="profile">
-              <Link to='/profile'>Profile</Link>
-            </span>
+              <span className="upload">
+                <Link to='/upload'>Upload</Link>
+              </span>
+              <span className="dashboard">
+                <Link to='/dashboard'>Home</Link>
+              </span>
+              <span className="profile">
+                <Link to='/profile'>Profile</Link>
+              </span>
           </div>
         </div>
       );

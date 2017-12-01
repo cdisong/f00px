@@ -19,7 +19,6 @@ class FollowerIndexItem extends React.Component {
           <h2>{user.username}</h2>
           <img src={user.profile_img_url}/>
           <h2>{user.description}</h2>
-          <button onClick={this.handleSubmit}>Follow</button>
         </span>
       </div>
     );

@@ -2,7 +2,9 @@
   display: flex; 
   flex-direction: row;
 }
-
+.image { 
+  align-self: center;
+}
 .desc { 
   margin: 5px;
   padding: 15px;

@@ -10,7 +10,7 @@ class SplashPage extends React.Component {
 
   
   demoUser() { 
-    const demouser = {username: 'demouser', password: "password"};
+    const demouser = {username: 'DemoUser', password: "password"};
     this.props.login(demouser);
     this.props.history.push("/dashboard");
   }
