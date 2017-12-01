@@ -14,37 +14,48 @@
 .login-signup-splash-header {
   display: flex; 
   justify-content: flex-start;
+  padding-top: 5px;
 }
 
 .login-signup-splash-header > a {
   border: 1px solid black; 
-  border-radius: 5px;
+  // border-radius: 5px;
   margin: 5px;
   padding: 5px 8px;
   background: rgba(134, 40, 40, 0.15);
+  font-size: 18px;
+}
+
+.headers {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
 }
 
 .splash-page-text  {
   // display: flex; 
   text-align: left; 
   font-family: 'Times New Roman', 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 24px;
   position: absolute;
-  top: 30%;
+  top: 26%;
   left: 28%;
   transform: translate(-50%, -50%);
   margin: 10px 0px;
 }
 
+.splash-page-text > h1 { 
+  font-size: 30px;
+}
+
 
 .splash-page-text > button {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   background: rgba(134, 40, 40, 0.15);
   margin: 5px;
   padding: 5px 8px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 

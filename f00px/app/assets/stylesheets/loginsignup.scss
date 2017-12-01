@@ -28,7 +28,7 @@
   font-family: 'Times New Roman', 'Times New Roman', Times, serif;
   font-size: 18px;
   position: absolute;
-  top: 30%;
+  top: 29%;
   left: 28%;
   transform: translate(-50%, -50%);
   margin: 10px 0px;
@@ -40,10 +40,16 @@ button, input[type="submit"] {
   padding: 5px;
   border: 1px solid black;
   margin: 5px;
-  font-size: 18px;
+  font-size: 17px;
+  border-radius: 0px;
 }
 
 .login-form { 
+  margin: 10px;
+  font-size: 18px;
+}
+
+.password-form{ 
   margin: 10px;
   font-size: 18px;
 }
