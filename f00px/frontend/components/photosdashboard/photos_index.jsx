@@ -23,7 +23,7 @@ class PhotosIndex extends React.Component {
             );
           })}
         </div>
-      </div>
+      </div> 
     );
   }
 }
