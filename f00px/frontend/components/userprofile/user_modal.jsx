@@ -93,7 +93,6 @@ class UserProfile extends React.Component {
   }
 
   render() { 
-    console.log("what", this.props);
     return (
       <div className="user-profile-container">
        

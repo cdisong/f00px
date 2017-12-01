@@ -42,9 +42,6 @@ class SessionForm extends React.Component {
       password: "password"
     }; 
     this.props.formRender(demoUser)
-    // .then(() => this.props.history.push('/dashboard'));
-    // console.log('asdfasdfs');
-    // console.log(this.props);
   }
   
   renderErrors() {
