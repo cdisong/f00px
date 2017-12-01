@@ -6,7 +6,7 @@ class Api::FollowsController < ApplicationController
     if @follow.save 
       render "api/users/show"
     else 
-      render json: @follow.errors.full_messages, status 422
+      render json: @follow.errors.full_messages, status: 422
     end 
   end
 
