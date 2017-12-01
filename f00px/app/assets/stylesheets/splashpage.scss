@@ -1,4 +1,7 @@
-.splash-page {
+
+
+.splash-page { 
+  display: flex; 
   background: image-url("sdsunsetr.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -8,75 +11,40 @@
   height: 800px;
 }
 
-.splash-page-text {
-  color: black;
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+.login-signup-splash-header {
+  display: flex; 
+  justify-content: flex-start;
+}
+
+.login-signup-splash-header > a {
+  border: 1px solid black; 
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px 8px;
+  background: rgba(134, 40, 40, 0.15);
+}
+
+.splash-page-text  {
+  // display: flex; 
+  text-align: left; 
+  font-family: 'Times New Roman', 'Times New Roman', Times, serif;
   font-size: 20px;
   position: absolute;
-  top: 35%;
-  left: 50%;
+  top: 30%;
+  left: 28%;
   transform: translate(-50%, -50%);
   margin: 10px 0px;
 }
+
 
 .splash-page-text > button {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
   padding: 10px;
   background: rgba(134, 40, 40, 0.15);
-  width: 150px;
-}
-
-.login-signup-splash-header {
-  display: flex; 
-  justify-items: flex-end;
+  margin: 5px;
+  padding: 5px 8px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
-// s
-// .splash-page {
-//   background: image-url("sdsunsetr.jpg");
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-attachment: fixed;
-//   position: relative;
-//   height: 800px;
-// }
-
-// .splash-page-text {
-//   color: black;
-//   text-align: center;
-//   font-family: 'Times New Roman', Times, serif;
-//   font-size: 20px;
-//   position: absolute;
-//   top: 45%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   margin: 10px 0px;
-// }
-
-// .splash-page-text > button {
-//   font-family: 'Times New Roman', Times, serif;
-//   font-size: 20px;
-//   padding: 10px;
-//   background: rgba(134, 40, 40, 0.15);
-//   width: 150px;
-// }
-
-// // .login-signup-splash-header {
-// //   background-color: rgba(134, 40, 40, 0.15);
-// // }
-
-// // .login-link {
-// //   display: flex;
-// //   border: 1px solid black; 
-// //   justify-content: right;
-// // }
-
-// // .signup-link {
-// //   display: flex;
-// //   border: 1px solid black;
-// //   align-content: right;
-// // }

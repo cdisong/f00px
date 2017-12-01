@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 class SplashPage extends React.Component { 
-  constructor(props){
+  constructor(props){ 
     super(props); 
     this.demoUser = this.demoUser.bind(this); 
   }
@@ -21,15 +21,18 @@ class SplashPage extends React.Component {
   render() {
     return ( 
       <div>
-        <header className="login-signup-splash-header"> 
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-        </header> 
         <section className="splash-page"> 
           <section className="splash-page-text"> 
             <h1>Welcome to F00PX</h1>
+            <p>See beauty from all around the world.</p>
+
             <br/>
+            <section className="login-signup-splash-header"> 
+                <Link to="/login">Log In</Link>
+                <Link to="/signup">Sign Up</Link>
+            </section> 
             <button onClick={this.demoUser}>Demo Login</button>
+            <br/>
           </section>
         </section>
       </div>
