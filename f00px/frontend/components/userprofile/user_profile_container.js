@@ -1,20 +1,22 @@
 import { connect } from 'react-redux'; 
 
-import { createFollow, deleteFollow, updateUser } from '../../actions/follow_actions';
+import { 
+  createFollow, 
+  deleteFollow, 
+  updateUser 
+} from '../../actions/follow_actions';
 import UserProfile from './user_profile';
 import { getSinglePhoto, getAllPhotos } from '../../actions/photo_actions'; 
 import {fetchUsers, fetchUser } from '../../actions/user_actions';
 import { selectUsersByFollow } from '../../reducers/selectors';
 const mapStateToProps = (state) => { 
-  const currentUserId = state.session.currentUser; 
+  const currentUser = state.session.currentUser; 
   const followers = selectUsersByFollow(state.entities.users, state.session.currentUser.followers);
   const following = selectUsersByFollow(state.entities.users, state.session.currentUser.following);
   return {
-    userId: state.entities.user,
-    currentUserId: currentUserId, 
-    user: state.entities.users, 
+    currentUser: currentUser, 
     photos: Object.values(state.entities.photos),
-    users: state.entities.users,
+    users: Object.values(state.entities.users),
     followers,
     following
   };

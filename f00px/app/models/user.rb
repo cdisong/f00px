@@ -40,21 +40,21 @@ class User < ApplicationRecord
     return arr
   end 
 
-  def followers 
-    arr = [] 
-    self.users_currently_following.each do |follower| 
-      arr << follower.id 
-    end 
-    return arr 
-  end 
+  # def followers 
+  #   arr = [] 
+  #   self.users_currently_following.each do |follower| 
+  #     arr << follower.id 
+  #   end 
+  #   return arr 
+  # end 
 
-  def followings 
-    arr = [] 
-    self.followers_following.each do |following| 
-      arr << following.id 
-    end 
-    return arr 
-  end 
+  # def followings 
+  #   arr = [] 
+  #   self.followers_following.each do |following| 
+  #     arr << following.id 
+  #   end 
+  #   return arr 
+  # end 
 
 
 

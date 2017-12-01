@@ -9,14 +9,14 @@
 User.destroy_all 
 Photo.destroy_all
 
-demouser = User.create!(username: "demouser", password: "password")
-user1 = User.create!(username: "user1", password: "password")
-user2 = User.create!(username: "user2", password: "password")
-user3 = User.create!(username: "user3", password: "password")
-user4 = User.create!(username: "user4", password: "password")
-user5 = User.create!(username: "user5", password: "password")
-user7 = User.create!(username: "anna", password: "password")
-user8 = User.create!(username: "chris", password: "password")
+demouser = User.create!(username: "demouser", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user1 = User.create!(username: "user1", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user2 = User.create!(username: "user2", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user3 = User.create!(username: "user3", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user4 = User.create!(username: "user4", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user5 = User.create!(username: "user5", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user7 = User.create!(username: "anna", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
+user8 = User.create!(username: "chris", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/v1512084188/No_image_available_dscbys.svg")
 
 Follow.create!(follower_id: demouser.id, followed_id: user4.id)
 Follow.create!(follower_id: user4.id, followed_id: demouser.id)
