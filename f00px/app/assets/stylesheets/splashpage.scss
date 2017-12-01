@@ -19,10 +19,8 @@
 
 .login-signup-splash-header > a {
   border: 1px solid black; 
-  // border-radius: 5px;
   margin: 5px;
   padding: 5px 8px;
-  // background: rgba(134, 40, 40, 0.15);
   font-size: 18px;
 }
 
@@ -32,9 +30,8 @@
 }
 
 .splash-page-text  {
-  // display: flex; 
+  font-family: Arial, Helvetica, sans-serif;
   text-align: left; 
-  font-family: 'Times New Roman', 'Times New Roman', Times, serif;
   font-size: 24px;
   position: absolute;
   top: 26%;
@@ -49,10 +46,9 @@
 
 
 .splash-page-text > button {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 10px;
-  // background: rgba(134, 40, 40, 0.15);
   margin: 5px;
   padding: 5px 8px;
   border: 1px solid black;

@@ -12,7 +12,7 @@ class PhotoUpload extends React.Component {
     super(props); 
     this.state = {
       image_url: "",
-      description: "",
+      description: "", 
     };
     this.handleImageUpload = this.handleImageUpload.bind(this); 
     this.update = this.update.bind(this);
@@ -55,7 +55,8 @@ class PhotoUpload extends React.Component {
   uploadedPhoto() {
     if (this.state.image_url === '') {
       return ( 
-        <div>Drop an image or click to select a file to upload.</div>
+        
+        <div className="drop-text"> Drop an image or click to select a file to upload.</div>
       );
     } else {
       return ( 
@@ -89,8 +90,9 @@ class PhotoUpload extends React.Component {
         </div> 
 
         <div> 
-          <div>
-            <label>Description 
+          <div className="upload-description">
+            <label> <strong><u>Description</u></strong>
+              <br/>
               <input type="text"
                 value={this.state.description}
                 onChange={this.update('description')}
@@ -98,7 +100,7 @@ class PhotoUpload extends React.Component {
             </label>
           </div>
           {this.renderErrors()}
-          <input type="submit" value="Upload"/>
+          <input className="upload" type="submit" value="Upload"/>
         </div> 
       </form> 
     );

@@ -1,4 +1,25 @@
 .photo-upload-form {
   display: flex; 
-  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 15px;
+  align-content: center;
+  border: 1px solid black;
 } 
+
+.drop-text { 
+  padding: 15px;
+}
+
+.upload-description {
+  display: flex; 
+  font-size: 18px;
+  display: column; 
+  align-content: flex-start;
+  padding-left: 15px;
+}
+
+
+button, input[type="submit"] {
+  margin-left: 15px;
+}

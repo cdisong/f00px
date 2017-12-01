@@ -25,7 +25,7 @@ class SplashPage extends React.Component {
           <section className="splash-page-text"> 
             <section className="headers">
               <h1>Welcome to F00PX</h1>
-              <h2>See beauty from all around the world.</h2>
+              <h2>See photos from all around the world.</h2>
             </section>
             <section className="login-signup-splash-header"> 
                 <Link to="/login">Log In</Link>
