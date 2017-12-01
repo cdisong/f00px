@@ -1,4 +1,4 @@
-import { fetchUser, fixUSer, fetchAllUsers } from '../util/user_api_util';
+import { fetchUser, fixUser, fetchAllUsers } from '../util/user_api_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
@@ -26,5 +26,12 @@ export const fetchUsers = () => dispatch => (
   fetchAllUsers()
   .then(users => (
     dispatch(receiveUsers(users))
+  ))
+);
+
+export const updateUser = user => dispatch => (
+  fixUser(user)
+  .then(fuser => (
+    dispatch(receiveUser(fuser))
   ))
 );

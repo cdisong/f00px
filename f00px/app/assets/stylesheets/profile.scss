@@ -20,8 +20,19 @@
   margin: 5px;
 }
 
+.update { 
+  display: flex; 
+  flex-direction: column;
+  border: 1px solid black;
+  justify-content: space-between;
+  height: 150px;
+  padding: 5px;
+  margin: 9px;
+}
 
-
+button,input[type="text"] { 
+  border: 1px solid black;
+}
 
 .user-profile-container {
   display: flex; 
@@ -30,6 +41,10 @@
 
 }
 
+.udescription {
+  display: flex; 
+  margin-bottom: 5px;
+}
 .followers { 
   display: flex; 
   flex-direction: row;
@@ -49,6 +64,12 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  border: 1px solid black;
+  align-items: center;
+}
+
+.image_user { 
+  margin-top: 15px;
 }
 .text-details {
   display: flex; 

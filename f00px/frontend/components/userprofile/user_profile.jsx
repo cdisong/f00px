@@ -18,7 +18,19 @@ class UserProfile extends React.Component {
     this.props.fetchUsers(); 
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault(); 
+    this.props.updateUser(this.state);
+  }
+
   render() { 
+    console.log("hey", this.props);
     return ( 
       <div className="user-profile">
         <section className="user-profile-container">
@@ -31,8 +43,24 @@ class UserProfile extends React.Component {
               <u>Username</u>
               {this.props.currentUser.username}
             <br/>                
+            <br/>
               <u>Description</u>
               {this.props.currentUser.description}
+
+              <form onSubmit={this.handleFormSubmit}>
+              <br/>
+              <section className="update">
+                <label> <section className="udescription"><u>Update Description</u></section>
+                  <br/>
+                  <input type="text" 
+                    onChange={this.update('description')} 
+                    className="description-edit"
+                    />
+                </label>
+                <input type="submit" value="Update Description"/>
+                </section>
+
+              </form>
 
           </div>
         </section>
@@ -78,6 +106,7 @@ class UserProfile extends React.Component {
                               </section>
                             </section>
                           </li>
+
                   </div>
                   );
                 })}

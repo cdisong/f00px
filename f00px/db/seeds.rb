@@ -10,13 +10,13 @@ User.destroy_all
 Photo.destroy_all
 Follow.destroy_all
 
-demouser = User.create!(username: "DemoUser", password: "password", description: "hi, I like pie", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+demouser = User.create!(username: "DemoUser", password: "password", description: "Hi, I like pie.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user1 = User.create!(username: "Richard", password: "password", description: "What is a circle?", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user2 = User.create!(username: "Anonymous", password: "password", description: "I like pizza", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user3 = User.create!(username: "Arizona", password: "password", description: "I am a photographer", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user2 = User.create!(username: "Edan", password: "password", description: "I have strawberry blonde hair.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user3 = User.create!(username: "Truong", password: "password", description: "I am a software engineer", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user4 = User.create!(username: "Janet", password: "password", description: "I like things", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user5 = User.create!(username: "I am tired", password: "password", description: "I would like to sleep.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user7 = User.create!(username: "Anna", password: "password", description: "LOREM IPSUM", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user7 = User.create!(username: "Anna", password: "password", description: "The Space Goat", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user8 = User.create!(username: "Chris", password: "password", description: "Something Something", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 
 Follow.create!(follower_id: demouser.id, followed_id: user4.id)
@@ -51,40 +51,22 @@ photo13 = Photo.create!(description: "Tree-made Tunnels", author_id: user1.id, i
 photo14 = Photo.create!(description: "Urban Destruction", author_id: user4.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845756/urbandestruction.png")
 photo15 = Photo.create!(description: "Zion River", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845745/zionriver.png")
 photo16 = Photo.create!(description: "Zion Temple Walls", author_id: user5.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845735/ziontemple.png")
-
 photo18 = Photo.create!(description: "Late Summer Days", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845713/latesummerdays.jpg")
 photo17 = Photo.create!(description: "Leaves and Shadows", author_id: user3.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845717/shadesandshadows.jpg")
-
-
 photo19 = Photo.create!(description: "California Afterglow", author_id: user3.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845693/californiaafterglow.jpg")
-
 photo20 = Photo.create!(description: "Cotton Candy Skies", author_id: user3.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845676/cottoncandyfreewaysky.png")
-
 photo21 = Photo.create!(description: "John Muir", author_id: user3.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845672/johnmuir.png")
-
 photo22 = Photo.create!(description: "Bear Mountain", author_id: user5.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845668/bearmountain.png")
-
 photo23 = Photo.create!(description: "Portland Landing", author_id: user3.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845658/portlandlanding.png")
-
 photo24 = Photo.create!(description: "Japanese Garden", author_id: user8.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845648/japanesegarden.png")
-
 photo25 = Photo.create!(description: "Purple Rains", author_id: user7.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845632/walkingdownalonelyroad.png")
-
 photo26 = Photo.create!(description: "Hydrangeas", author_id: user2.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845622/hydrangeas.png")
 photo27 = Photo.create!(description: "Marbled Tides", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845610/sdmarbledtide.png")
-
 photo28 = Photo.create!(description: "Palace of Fine Arts", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845604/finearts.png")
-
 photo29 = Photo.create!(description: "Cliffside Hanging", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845593/cliffsideend.png")
-
 photo30 = Photo.create!(description: "Glass House", author_id: user4.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511845089/backyardgoals.png")
-
 photo31 = Photo.create!(description: "Flying South", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844999/vline.jpg")
-
 photo32 = Photo.create!(description: "Wes Anderson", author_id: user2.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844912/wesanderson.jpg")
-
 photo33 = Photo.create!(description: "Portland Trees", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844481/portlandtrees_fqd351.png")
-
 photo34 = Photo.create!(description: "DTLA", author_id: user5.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844465/dtusc_nmcunc.png")
-
 photo35 = Photo.create!(description: "SD Sunsets", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511844461/sdsunset_f6nbla.png")

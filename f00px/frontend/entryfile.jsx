@@ -11,6 +11,8 @@ import {
   deletePhoto, 
   updatePhoto
 } from './util/photo_api_util';
+
+import { fixUser } from './util/user_api_util';
 // import { receiveUserPhotos } from '../actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deletePhoto = deletePhoto; 
   window.fetchUsers = fetchUsers;
   window.fetchUser = fetchUser;
+  window.fixUser = fixUser;
   // window.updatePhoto = updatePhoto;
   ReactDOM.render(<Root store={store}/>, root);
   // ReactDOM.render(<h1>this is from entryfile</h1>, root);

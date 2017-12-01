@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { 
   createFollow, 
   deleteFollow, 
-  updateUser 
 } from '../../actions/follow_actions';
+
 import UserProfile from './user_profile';
 import { getSinglePhoto, getAllPhotos } from '../../actions/photo_actions'; 
-import {fetchUsers, fetchUser } from '../../actions/user_actions';
+import { fetchUsers, fetchSingleUser, updateUser } from '../../actions/user_actions';
 import { selectUsersByFollow, selectPhotosByUser } from '../../reducers/selectors';
 const mapStateToProps = (state) => { 
   const currentUser = state.session.currentUser; 
@@ -24,12 +24,12 @@ const mapStateToProps = (state) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSingleUser: (id) => dispatch(fetchUser(id)),
+  fetchSingleUser: (id) => dispatch(fetchSingleUser(id)),
   createfollow: user => dispatch(createFollow(user)), 
   deletefollow: user => dispatch(deleteFollow(user)),
   getSinglePhoto: (userId) => dispatch(getSinglePhoto(userId)), 
   getAllPhotos: () => dispatch(getAllPhotos()), 
-  updateUser: () => dispatch(updateUser()), 
+  updateUser: (user) => dispatch(updateUser(user)), 
   fetchUsers: () => dispatch(fetchUsers())
 });
 
