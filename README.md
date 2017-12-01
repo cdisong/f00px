@@ -13,15 +13,14 @@ New users can create an account and existing users can log back in in order to v
 ![](https://github.com/cdisong/f00px/blob/master/f00px/app/assets/images/Screen%20Shot%202017-12-01%20at%2014.51.15.png)
 
 
-
 ### Photos Dashboard
-A photos dashboard loads the photos of the members associated with the user's network, i.e., the members who are followed by the user as well as the user's own photos, and implements React-Modals to expand the details of the photos to display the username of the person who originally uploaded the photo as well as an optional description of the photo. 
-
-
+A photos dashboard loads the photos of the members associated with the user's network, i.e., the members who are followed by the user as well as the user's own photos. The dashboard also implements React-Modals to expand the details of the photos to display the username of the person who originally uploaded the photo as well as an optional description of the photo. 
 
 ![](https://github.com/cdisong/f00px/blob/master/f00px/app/assets/images/Screen%20Shot%202017-12-01%20at%2015.00.50.png)
 ![](https://github.com/cdisong/f00px/blob/master/f00px/app/assets/images/Screen%20Shot%202017-12-01%20at%2014.59.42.png) 
 
+
 ## Future Features 
-* PhotosUpload converted into modal with React-Modal.
-* Tags to sort photos by category. 
+* Convert photos upload option into modal. 
+* Implement tags on dashboard nav bar to sort and categorize photos according to user preference. 
+* Convert button styling to icons and implement infinite-scroll feature onto dashboard as well as followers and following containers. 
