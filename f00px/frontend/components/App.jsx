@@ -19,6 +19,10 @@ export const App = () => (
     <header>
     </header>
       <Route path="/" component={GreetingContainer} />
+      <Switch>
+        <Redirect from='/' to='/splash'/>
+        <Route path='/splash' component={SplashContainer}/>
+      </Switch>
     <Switch>
         <AuthRoute exact path="/splash" component={SplashContainer}/>
         <AuthRoute path="/login" component={SessionFormContainer} />

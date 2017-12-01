@@ -106,6 +106,6 @@ class PhotoUpload extends React.Component {
 }
 
 
-export default withRouter(PhotoUpload);
+export default PhotoUpload;
 
 

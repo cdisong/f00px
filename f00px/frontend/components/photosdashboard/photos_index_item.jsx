@@ -23,12 +23,9 @@ const style = {
     margin          : 'auto',
     width           : '400px',
     height          : '400px',
-    // border          : '1px solid #sccc',
     padding         : '15px',
     zIndex          : 11
 
-    // opacity         : '',
-    // transition      : 'opacity 2s'
   }
 };
 
@@ -52,14 +49,13 @@ class PhotoIndexItem extends React.Component {
 
   render() {
     const { photo } = this.props; 
-    console.log(this.props);
     return(
       <div> 
         <span className="photo-item">
           <button onClick={this.openPhotoDetail}>
           <img src={photo.image_url} />
           </button>
-         <ReactModal className ="photo-detail" 
+         <ReactModal className="photo-detail" 
           onRequestClose={() => this.closePhotoDetail()}
           isOpen={this.state.photoDetailIsOpen}
           shouldCloseOnOverlayClick={true} 
