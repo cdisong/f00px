@@ -65,8 +65,10 @@ class PhotoIndexItem extends React.Component {
           shouldCloseOnOverlayClick={true} 
           contentLabel="Modal"
           style={style}> 
+         <strong className="x-button"><button onClick={this.closePhotoDetail}>x</button></strong>
+         <br/>
           <div className="detail-view">
-            <div className="image">
+            <div className="images">
               <img src={photo.image_url}/> 
             </div>
             <div className="desc">
@@ -83,7 +85,6 @@ class PhotoIndexItem extends React.Component {
               {photo.description}
             </div>
           </div>
-
         </ReactModal>
         </span>
       </div>
