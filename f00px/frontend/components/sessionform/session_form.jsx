@@ -94,7 +94,6 @@ class SessionForm extends React.Component {
                   />
                 </label>
               <br/>
-              <button onClick={this.handleClick}>Demo Login</button>
               <br/>
               <input type="submit" value="Submit"/>
               </div>
