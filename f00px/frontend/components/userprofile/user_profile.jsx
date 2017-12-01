@@ -23,14 +23,17 @@ class UserProfile extends React.Component {
       <div className="user-profile">
         <section className="user-profile-container">
           <div className="user-details">
-          <div className="image">
+          <div className="image_user">
             <img src={this.props.currentUser.profile_img_url}/>
           </div>
-            <u>Username</u>
-            {this.props.currentUser.username}
-            <br/>                        
-            <u>Description</u>
-            {this.props.currentUser.description}
+          <br/>
+          <br/>
+              <u>Username</u>
+              {this.props.currentUser.username}
+            <br/>                
+              <u>Description</u>
+              {this.props.currentUser.description}
+
           </div>
         </section>
             <section className="followers-container">
@@ -60,9 +63,9 @@ class UserProfile extends React.Component {
               <u>Following</u>
                 {this.props.following.map((user) => {
                   return (
-                  <div className="following">
+                  <div className="followers">
                           <li key={user.id}>
-                            <section className="following-details">
+                            <section className="follower-details">
                               <div className="image">
                                 <img src={user.profile_img_url}/>
                               </div>

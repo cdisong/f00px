@@ -2,16 +2,15 @@
   display: flex; 
   flex-direction: row;
   margin: 15px;
-  height: 900px;
-  width: 900px;
+  height: 1000px;
+  width: 1500px;
   align-content: flex-end;
-  border: 1px solid black;
 }
 
 .followers-container { 
   display: flex; 
   flex-direction: column;
-  border: 1px solid blue; 
+  border: 1px solid black; 
   margin: 15px;
   align-content: flex-end;
 }
@@ -21,15 +20,12 @@
   margin: 5px;
 }
 
-.x-button { 
-  font-size: 20px;
-  font-family: sans-serif;
-}
+
+
 
 .user-profile-container {
   display: flex; 
-  flex-direction: row;
-  border: 1px solid purple; 
+  flex-direction: column;
   margin: 15px;
 
 }
@@ -37,9 +33,10 @@
 .followers { 
   display: flex; 
   flex-direction: row;
-  border: 1px solid blue; 
+  border: 1px solid black; 
   margin: 15px;
 }
+
 
 .follower-details { 
   display: flex;
@@ -65,18 +62,28 @@
 
 }
 
-.following {
-  display: flex; 
-  flex-direction: column;
-  border: 1px solid red; 
-  margin: 15px;
+.image_user { 
+  display: flex;
+  max-height: 100px; 
+  max-width: 100px;
 }
 
 .image { 
   display: flex;
   max-height: 100px; 
   max-width: 100px;
+  border-right: 1px solid black;
+  margin-right: 9px;
 }
+
+.image-s { 
+  display: flex;
+  max-height: 100px; 
+  max-width: 100px;
+  border-right: 1px solid black;
+  margin-right: 9px;
+}
+
 
 li {
   list-style: none;
