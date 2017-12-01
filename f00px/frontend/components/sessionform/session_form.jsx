@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
     e.preventDefault(); 
     const user = Object.assign({}, this.state); 
     this.props.formRender(user)
-    .then(() => this.props.history.push('/dashboard'));
+    // .then(() => this.props.history.push('/dashboard'));
   }
 
   navLink() {
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       password: "password"
     }; 
     this.props.formRender(demoUser)
-    .then(() => this.props.history.push('/dashboard'));
+    // .then(() => this.props.history.push('/dashboard'));
     // console.log('asdfasdfs');
     // console.log(this.props);
   }

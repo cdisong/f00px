@@ -17,11 +17,11 @@ Route,
 export const App = () => (
   <div> 
     <header>
-      <ProtectedRoute path="/" component={GreetingContainer} />
-        <Route exact path="/" component={SplashContainer}/>
-        <AuthRoute path="/login" component={SessionFormContainer} />
     </header>
+      <Route path="/" component={GreetingContainer} />
     <Switch>
+        <AuthRoute exact path="/splash" component={SplashContainer}/>
+        <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
