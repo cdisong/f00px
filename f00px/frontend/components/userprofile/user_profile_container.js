@@ -9,6 +9,7 @@ import UserProfile from './user_profile';
 import { getSinglePhoto, getAllPhotos } from '../../actions/photo_actions'; 
 import { fetchUsers, fetchSingleUser, updateUser } from '../../actions/user_actions';
 import { selectUsersByFollow, selectPhotosByUser } from '../../reducers/selectors';
+
 const mapStateToProps = (state) => { 
   const currentUser = state.session.currentUser; 
   const followers = selectUsersByFollow(state.entities.users, state.session.currentUser.followers);

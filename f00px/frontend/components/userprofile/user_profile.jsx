@@ -6,13 +6,8 @@ import FollowingIndexItem from './follower/following_index_item';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props); 
-    this.state = {
-      username: "", 
-      image_url: "", 
-      photo_ids: [], 
-      followers: [], 
-      following: [], 
-    }; 
+    this.state = this.props.currentUser; 
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
   componentDidMount() { 
     this.props.fetchUsers(); 
@@ -26,11 +21,11 @@ class UserProfile extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault(); 
-    this.props.updateUser(this.state);
+    const currentUser = this.props.currentUser;
+    this.props.updateUser(Object.assign({}, currentUser, this.state));
   }
 
   render() { 
-    console.log("hey", this.props);
     return ( 
       <div className="user-profile">
         <section className="user-profile-container">
@@ -69,7 +64,7 @@ class UserProfile extends React.Component {
               {this.props.followers.map((user) => {
                 return (
                 <div className="followers">
-                        <li key={user.id}>
+                        <li key={`followers-${user.id}`}>
                           <section className="follower-details">
                             <div className="image">
                               <img src={user.profile_img_url}/>
@@ -92,7 +87,7 @@ class UserProfile extends React.Component {
                 {this.props.following.map((user) => {
                   return (
                   <div className="followers">
-                          <li key={user.id}>
+                          <li key={`following-${user.id}`}>
                             <section className="follower-details">
                               <div className="image">
                                 <img src={user.profile_img_url}/>
