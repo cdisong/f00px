@@ -4,6 +4,8 @@ import ReactModal from 'react-modal';
 import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 
+
+
 const style = {
   overlay : {
     position        : 'fixed',
@@ -32,6 +34,7 @@ const style = {
   }
 };
 
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -50,9 +53,12 @@ class UserProfile extends React.Component {
     this.closeFollowingModal = this.closeFollowingModal.bind(this);
   }
 
+
   componentDidMount() {
     this.props.fetchUsers();
   }
+
+
 
   // componentWillReceiveProps(nextProps) {
   //   if (this.props.user.id !== nextProps.user.id) {
@@ -147,15 +153,10 @@ class UserProfile extends React.Component {
       </div>
       
       );
-        
-
-
   }
 }
 
 export default UserProfile;
-
-
 
 
 import React from 'react'; 

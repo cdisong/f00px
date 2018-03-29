@@ -1,27 +1,39 @@
 .upload {
-  border: 1px solid black;
+  border: 1px solid #CCCBC1;
+  border-radius: 15%;
+
   margin: 5px;
   padding: 5px;
+  background-color: #CCCBC6;
 }
 
 .dashboard {
-  border: 1px solid black;
+  border: 1px solid #CCCBC1;
+  border-radius: 15%;
+
   margin: 5px;
   padding: 5px;
+  background-color: #A9B7C0;
 }
 
 .profile {
-  border: 1px solid black;
+  border: 1px solid #CCCBC1;
+  border-radius: 15%;
   margin: 5px;
   padding: 5px;
+  background-color: #FBA100;
 }
 
 .header-button {
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid black;
+  border-radius: 15%;
+
+  border: 1px solid #CCCBC1;
   margin: 5px;
   padding: 5px;
   width: 70px;
+  background-color: #6bbaa7 ;
+
 }
 
 .header-name { 
@@ -32,14 +44,15 @@
   padding: 5px;
   width: 100%;
   justify-content: flex-start;
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid black;
 }
 
 .buttons-on-top {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 5px;
   margin-right: 5px;
-  display: flex; 
+  display: flex;
   justify-content: flex-end;
   padding-top: 6px;
+  background-color: #b6a19e;
 }
