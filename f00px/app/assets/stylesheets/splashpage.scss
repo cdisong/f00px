@@ -2,7 +2,8 @@
 
 .splash-page { 
   display: flex; 
-  background: image-url("sdsunsetr.jpg");
+  background: image-url("green.jpg");
+  color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,14 +19,14 @@
 }
 
 .login-signup-splash-header > a {
-  border: 1px solid black; 
+  border: 1px solid white; 
   margin: 5px;
   padding: 5px 8px;
   font-size: 18px;
 }
 
 .headers {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   padding-bottom: 5px;
 }
 
@@ -51,7 +52,7 @@
   padding: 10px;
   margin: 5px;
   padding: 5px 8px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 0px;
 }
 
