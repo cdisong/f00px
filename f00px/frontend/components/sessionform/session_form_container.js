@@ -15,22 +15,24 @@ const mapStateToProps = (state) => {
 };
 
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     login: user => dispatch(login(user)), 
-//     logout: () => dispatch(logout()),
-//     signup: user => dispatch(signup(user)), 
-//   };
-// };
-
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
-  const formRender = (formType === 'login') ? login : signup;
+const mapDispatchToProps = (dispatch) => {
   return {
-    formRender: user => dispatch(formRender(user)),
-    formType
+    login: user => dispatch(login(user)), 
+    logout: () => dispatch(logout()),
+    signup: user => dispatch(signup(user)), 
   };
 };
+
+//apr 8 V 
+// const mapDispatchToProps = (dispatch, { location }) => {
+//   const formType = location.pathname.slice(1);
+//   const formRender = (formType === 'login') ? login : signup;
+//   return {
+//     formRender: user => dispatch(formRender(user)),
+//     formType
+//   };
+// };
+// ^ 
 
 export default connect(
   mapStateToProps,

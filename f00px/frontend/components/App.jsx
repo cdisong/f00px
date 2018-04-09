@@ -16,6 +16,10 @@ Route,
 
 export const App = () => (
   <div> 
+    <nav>
+      <h2>F00px</h2>
+      <AuthRoute path="/" component={SessionFormContainer}/>
+    </nav>
     <header>
     </header>
       <Route path="/" component={GreetingContainer} />
@@ -25,8 +29,6 @@ export const App = () => (
       </Switch>
     <Switch>
         <AuthRoute exact path="/splash" component={SplashContainer}/>
-        <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
       <ProtectedRoute path="/profile" component={UserProfileContainer} />
