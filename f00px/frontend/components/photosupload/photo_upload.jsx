@@ -2,7 +2,32 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { withRouter } from 'react-router-dom';
+import Modal from 'react-modal';
 
+const style = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(255,255,255, 0.7)',
+    zIndex          : 10
+  },
+  content : {
+    position        : 'fixed',
+    top             : '100px',
+    left            : '100px', 
+    right           : '100px',
+    bottom          : '100px',
+    margin          : 'auto',
+    width           : '400px',
+    height          : '400px',
+    padding         : '15px',
+    zIndex          : 11
+
+  }
+};
 
 const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
@@ -13,11 +38,22 @@ class PhotoUpload extends React.Component {
     this.state = {
       image_url: "",
       description: "", 
+      modalOpen: false
     };
     this.handleImageUpload = this.handleImageUpload.bind(this); 
     this.update = this.update.bind(this);
     // this.onImageDrop = this.onImageDrop.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
+  }
+
+  openModal() { 
+    this.setState({ modalOpen: true});
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false }); 
   }
 
   update(field) {
@@ -79,30 +115,37 @@ class PhotoUpload extends React.Component {
 
   render() {
     return( 
-      <form onSubmit={this.handleSubmit} className="photo-upload-form"> 
-        <div className="photo-upload">
-          <Dropzone
-            multiple={false}
-            accept="image/*"
-            onDrop={this.handleImageUpload}> 
-            {this.uploadedPhoto()}
-          </Dropzone> 
-        </div> 
+      <Modal 
+      contentLabel="UploadModal"
+      isOpen={this.state.modalOpen}
+      onRequestClose={this.closeModal}
+      shouldCloseOnOverlayClick={true}
+      style={style}>
+        <form onSubmit={this.handleSubmit} className="photo-upload-form"> 
+          <div className="photo-upload">
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.handleImageUpload}> 
+              {this.uploadedPhoto()}
+            </Dropzone> 
+          </div> 
 
-        <div> 
-          <div className="upload-description">
-            <label> <strong><u>Description</u></strong>
-              <br/>
-              <input type="text"
-                value={this.state.description}
-                onChange={this.update('description')}
-              />
-            </label>
-          </div>
-          {this.renderErrors()}
-          <input className="upload" type="submit" value="Upload"/>
-        </div> 
-      </form> 
+          <div> 
+            <div className="upload-description">
+              <label> <strong><u>Description</u></strong>
+                <br/>
+                <input type="text"
+                  value={this.state.description}
+                  onChange={this.update('description')}
+                />
+              </label>
+            </div>
+            {this.renderErrors()}
+            <input className="upload" type="submit" value="Upload"/>
+          </div> 
+        </form> 
+      </Modal>
     );
   }
 }

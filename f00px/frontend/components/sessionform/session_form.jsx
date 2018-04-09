@@ -126,7 +126,6 @@ class SessionForm extends React.Component {
                             </div>
 
                             <form className="login-form-box">
-                                <br/>
                                 {this.formHeading()}
                                 <br/>
                                 {this.renderErrors()}

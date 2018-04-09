@@ -12,4 +12,4 @@ export const selectPhotosByUser = (users, photos) => (
   _.filter((Object.values(users)), user => (photos.includes(user.id)))
 );
 
-// window.selectUsersByFollow = selectUsersByFollow;
+window.selectPhotosByUser = selectPhotosByUser;

@@ -12,6 +12,8 @@ import {
   updatePhoto
 } from './util/photo_api_util';
 
+import { selectPhotosByUser } from './reducers/selectors';
+
 import { fixUser } from './util/user_api_util';
 // import { receiveUserPhotos } from '../actions/user_actions';
 
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUsers = fetchUsers;
   window.fetchUser = fetchUser;
   window.fixUser = fixUser;
+  window.selectPhotosByUser = selectPhotosByUser;
   // window.updatePhoto = updatePhoto;
   ReactDOM.render(<Root store={store}/>, root);
   // ReactDOM.render(<h1>this is from entryfile</h1>, root);

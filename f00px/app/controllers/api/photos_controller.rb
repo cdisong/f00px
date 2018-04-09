@@ -20,8 +20,13 @@ class Api::PhotosController < ApplicationController
     end 
   end
 
+  def dashboard 
+    @photos = Photo.dashboard(current_user.id) 
+    render 'api/photos/dashboard'
+  end 
   def index
-    @photos = Photo.all 
+    @photos = Photo.find_by_user_id(params[:user_id])
+    render api/photos/index
   end
 
   def show

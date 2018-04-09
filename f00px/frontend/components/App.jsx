@@ -19,17 +19,16 @@ export const App = () => (
     <nav>
       <h2>F00px</h2>
       <AuthRoute path="/" component={SessionFormContainer}/>
+      <Route path="/" component={GreetingContainer} />
     </nav>
     <header>
     </header>
-      <Route path="/" component={GreetingContainer} />
       <Switch>
         <Redirect from='/' to='/splash'/>
         <Route path='/splash' component={SplashContainer}/>
       </Switch>
     <Switch>
         <AuthRoute exact path="/splash" component={SplashContainer}/>
-      <ProtectedRoute path="/upload" component={PhotoUploadContainer} /> 
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
       <ProtectedRoute path="/profile" component={UserProfileContainer} />
     </Switch>

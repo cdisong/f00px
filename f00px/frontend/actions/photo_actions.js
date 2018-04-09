@@ -2,7 +2,8 @@ import {
   fetchSinglePhoto, 
   createPhoto, 
   fetchAllPhotos, 
-  deletePhoto 
+  deletePhoto,
+  fetchUserPhotos
 } from '../util/photo_api_util';
 
 
@@ -22,6 +23,7 @@ export const receiveAllPhotos = photos => ({
   type: RECEIVE_ALL_PHOTOS,
   photos 
 }); 
+
 
 export const destroyPhoto = id => ({
   type: DELETE_PHOTO, 
@@ -55,6 +57,20 @@ export const getSinglePhoto = id => dispatch => (
   ) 
 ); 
 
+export const getUserPhotos = userid => dispatch => (
+  fetchUserPhotos(userid) 
+  .then(
+    photos => {
+      dispatch(receiveAllPhotos(photos)); 
+      dispatch(clearErrors()); 
+    }, 
+    error => ( 
+      dispatch(receiveErrors(error.responseJSOn))
+    )
+  )
+);
+
+//dashboard photos
 export const getAllPhotos = () => dispatch => (
   fetchAllPhotos()
   .then(
