@@ -14,11 +14,11 @@ const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser; 
   const followers = selectUsersByFollow(state.entities.users, state.session.currentUser.followers);
   const following = selectUsersByFollow(state.entities.users, state.session.currentUser.following);
-  // const photos = selectPhotosByUser
+  const photos = selectPhotosByUser(state.entities.photos, state.session.currentUser.photo_ids);
   return {
     currentUser: currentUser, 
-    photos: Object.values(state.entities.photos),
     users: Object.values(state.entities.users),
+    photos,
     followers,
     following
   };

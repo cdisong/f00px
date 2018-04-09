@@ -4,13 +4,77 @@ import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 import Modal from 'react-modal'; 
 
+const style = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(255,255,255, 0.7)',
+    zIndex          : 10
+  },
+  content : {
+    position        : 'fixed',
+    top             : '100px',
+    left            : '100px',
+    right           : '100px',
+    bottom          : '100px',
+    margin          : 'auto',
+    width           : '400px',
+    height          : '400px',
+    // border          : '1px solid #sccc',
+    padding         : '15px',
+    zIndex          : 11
+
+    // opacity         : '',
+    // transition      : 'opacity 2s'
+  }
+};
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props); 
-    this.state = this.props.currentUser; 
+    this.state = {
+      user: this.props.currentUser, 
+      photos: this.props.photos,
+      modalOpen: false,
+      followerModalOpen: false, 
+      followingModalOpen: false
+    };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.modalOpen = this.modalOpen.bind(this);
+    this.modalClose = this.modalClose.bind(this);
+    this.openFollowerModal = this.openFollowerModal.bind(this);
+    this.closeFollowerModal = this.closeFollowerModal.bind(this);
+    this.openFollowingModal = this.openFollowingModal.bind(this);
+    this.closeFollowingModal = this.closeFollowingModal.bind(this);
   }
+
+  modalOpen() {
+    this.setState({modalOpen: true});
+  }
+
+  modalClose() {
+    this.setState({modalOpen: false});
+  }
+
+  openFollowerModal() {
+    this.setState({followerModalOpen: true});
+  }
+
+  closeFollowerModal() {
+    this.setState({followerModalOpen: false}); 
+  }
+
+  openFollowingModal() {
+    this.setState({followingModalOpen: true});
+  }
+
+  closeFollowingModal() {
+    this.setState({followingModalOpen: false});
+  }
+
   componentDidMount() { 
     this.props.fetchUsers(); 
   }
@@ -23,7 +87,7 @@ class UserProfile extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault(); 
-    const currentUser = this.props.currentUser;
+    const currentUser = this.state.user;
     this.props.updateUser(Object.assign({}, currentUser, this.state));
   }
 
@@ -33,17 +97,15 @@ class UserProfile extends React.Component {
       <div className="user-profile">
         <section className="user-profile-container">
           <div className="user-details">
-          <div className="image_user">
-            <img src={this.props.currentUser.profile_img_url}/>
-          </div>
-          <br/>
-          <br/>
-              <u>Username</u>
-              {this.props.currentUser.username}
+            <div className="image_user">
+              <img src={this.state.user.profile_img_url}/>
+            </div>
+            <br/>
+            <br/>
+              {this.state.user.username}
             <br/>                
             <br/>
-              <u>Description</u>
-              {this.props.currentUser.description}
+              {this.state.user.description}
 
               <form onSubmit={this.handleFormSubmit}>
               <br/>
@@ -59,11 +121,32 @@ class UserProfile extends React.Component {
                 </section>
 
               </form>
-
+              <div className="follower-button">
+              <button onClick={this.openFollowerModal}>Followers</button>
+              </div>
+              <div className="follower-button">
+              <button onClick={this.openFollowingModal}>Following</button>
+              </div>
           </div>
         </section>
+        <div className="grid-container"> 
+          <div className="grid"> 
+            {this.state.photos.map((photo) => {
+              return (
+                <img src={photo.image_url}/>
+              )
+            })}
+          </div>
+        </div>
+        <Modal 
+          contentLabel="FollowerModal"
+          isOpen={this.state.followerModalOpen}
+          onRequestClose={this.closeFollowerModal}
+          shouldCloseOnOverlayClick={true}
+          style={style}>
             <section className="followers-container">
-            <u>Followers</u>
+              <button onClick={this.closeFollowerModal}>x</button>
+            <u>You have {this.props.followers.length} followers!</u>
               {this.props.followers.map((user) => {
                 return (
                 <div className="followers">
@@ -73,10 +156,9 @@ class UserProfile extends React.Component {
                               <img src={user.profile_img_url}/>
                             </div>
                             <section className="text-details">
-                              <u>Username</u>
+                              <br/>
                               <h2>{user.username}</h2>
                               <br/>                        
-                              <u>Description</u>
                               <h2>{user.description}</h2>
                             </section>
                           </section>
@@ -85,8 +167,17 @@ class UserProfile extends React.Component {
                 );
               })}
               </section>
+          </Modal>
+          <Modal 
+            contentLabel="FollowingModal"
+            isOpen={this.state.followingModalOpen}
+            onRequestClose={this.closeFollowingModal}
+            shouldCloseOnOverlayClick={true}
+            style={style}>
               <section className="followers-container">
-              <u>Following</u>
+                <button onClick={this.closeFollowingModal}>x</button>
+
+              <u>You are following {this.props.following.length} users!</u>
                 {this.props.following.map((user) => {
                   return (
                   <div className="followers">
@@ -96,10 +187,8 @@ class UserProfile extends React.Component {
                                 <img src={user.profile_img_url}/>
                               </div>
                               <section className="text-details">
-                                <u>Username</u>
                                   <h2>{user.username}</h2>
                                 <br/>                          
-                                <u>Description</u>
                                   <h2>{user.description}</h2>
                               </section>
                             </section>
@@ -109,8 +198,8 @@ class UserProfile extends React.Component {
                   );
                 })}
               </section>
-
-
+            </Modal>
+      
       </div>
     );
   }

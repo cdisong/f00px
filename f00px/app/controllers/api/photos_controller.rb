@@ -22,6 +22,7 @@ class Api::PhotosController < ApplicationController
 
   def dashboard 
     @photos = Photo.dashboard(current_user.id) 
+    @users = User.all
     render 'api/photos/dashboard'
   end 
 
