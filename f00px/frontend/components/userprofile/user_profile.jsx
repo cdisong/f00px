@@ -106,9 +106,18 @@ class UserProfile extends React.Component {
             <br/>                
             <br/>
               {this.state.user.description}
-
+              <br/>
+              <button onClick={this.modalOpen}>Update Description</button>
+              <Modal 
+                contentLabel="FollowerModal"
+                isOpen={this.state.modalOpen}
+                onRequestClose={this.modalClose}
+                shouldCloseOnOverlayClick={true}
+                style={style}>
               <form onSubmit={this.handleFormSubmit}>
               <br/>
+              <button onClick={this.modalClose}>x</button>
+
               <section className="update">
                 <label> <section className="udescription"><u>Update Description</u></section>
                   <br/>
@@ -119,8 +128,8 @@ class UserProfile extends React.Component {
                 </label>
                 <input type="submit" value="Update Description"/>
                 </section>
-
               </form>
+              </Modal>
               <div className="follower-button">
               <button onClick={this.openFollowerModal}>Followers</button>
               </div>
