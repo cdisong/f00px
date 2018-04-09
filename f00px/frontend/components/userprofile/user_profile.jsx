@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { withRouter } from 'react-router-dom'; 
+import { Link, withRouter } from 'react-router-dom'; 
 import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 import Modal from 'react-modal'; 
@@ -38,6 +38,7 @@ class UserProfile extends React.Component {
     this.state = {
       user: this.props.currentUser, 
       photos: this.props.photos,
+      isCurrentUser: true, 
       modalOpen: false,
       followerModalOpen: false, 
       followingModalOpen: false
@@ -49,7 +50,21 @@ class UserProfile extends React.Component {
     this.closeFollowerModal = this.closeFollowerModal.bind(this);
     this.openFollowingModal = this.openFollowingModal.bind(this);
     this.closeFollowingModal = this.closeFollowingModal.bind(this);
+    // this.changeUsers = this.changeUsers.bind(this);
   }
+  
+  // componentWillReceiveProps(nextProps) {
+  //   console.log(nextProps);
+  //   if (this.state.user.id !== nextProps.users.id) {
+
+  //     this.setState({
+  //       user: nextProps.users.id, 
+  //       photos: nextProps.photos,
+      
+  //     });
+  //   }
+  // }
+    
 
   modalOpen() {
     this.setState({modalOpen: true});
@@ -84,14 +99,16 @@ class UserProfile extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+  
+  // changeUsers(user){
+  //   this.setState({user: user, photos: user.photos, isCurrentUser: false });
+  // }
 
   handleFormSubmit(e) {
     e.preventDefault(); 
     const currentUser = this.state.user;
     this.props.updateUser(Object.assign({}, currentUser, this.state));
   }
-
-  
   render() { 
     return ( 
       <div className="user-profile">
@@ -130,6 +147,7 @@ class UserProfile extends React.Component {
                 </section>
               </form>
               </Modal>
+
               <div className="follower-button">
               <button onClick={this.openFollowerModal}>Followers</button>
               </div>
@@ -143,7 +161,7 @@ class UserProfile extends React.Component {
             {this.state.photos.map((photo) => {
               return (
                 <img src={photo.image_url}/>
-              )
+              );
             })}
           </div>
         </div>
@@ -155,11 +173,12 @@ class UserProfile extends React.Component {
           style={style}>
             <section className="followers-container">
               <button onClick={this.closeFollowerModal}>x</button>
-            <u>You have {this.props.followers.length} followers!</u>
+            <u>Followed by {this.props.followers.length} users!</u>
               {this.props.followers.map((user) => {
                 return (
                 <div className="followers">
                         <li key={`followers-${user.id}`}>
+                          <Link to={`/users/${user.id}`} onClick={this.closeFollowerModal}>
                           <section className="follower-details">
                             <div className="image">
                               <img src={user.profile_img_url}/>
@@ -171,6 +190,7 @@ class UserProfile extends React.Component {
                               <h2>{user.description}</h2>
                             </section>
                           </section>
+                          </Link>
                         </li>
                 </div>
                 );
@@ -186,7 +206,7 @@ class UserProfile extends React.Component {
               <section className="followers-container">
                 <button onClick={this.closeFollowingModal}>x</button>
 
-              <u>You are following {this.props.following.length} users!</u>
+              <u>Following {this.props.following.length} users!</u>
                 {this.props.following.map((user) => {
                   return (
                   <div className="followers">

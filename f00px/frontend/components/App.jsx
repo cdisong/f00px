@@ -6,6 +6,7 @@ import SplashContainer from './splash/splash_container';
 import PhotoUploadContainer from './photosupload/photo_upload_container';
 import PhotosIndexContainer from './photosdashboard/photos_index_container';
 import UserProfileContainer from './userprofile/user_profile_container';
+// import UsersProfileContainer from './userprofile/users_profile_container';
 import {
 Route,
   Redirect,
@@ -31,6 +32,7 @@ export const App = () => (
         <AuthRoute exact path="/splash" component={SplashContainer}/>
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
       <ProtectedRoute path="/profile" component={UserProfileContainer} />
+      {/* <ProtectedRoute path="/users/" component={UsersProfileContainer} /> */}
     </Switch>
   </div> 
 ); 
