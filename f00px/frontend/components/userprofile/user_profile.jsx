@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'; 
 import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
+import Modal from 'react-modal'; 
+
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class UserProfile extends React.Component {
     this.props.updateUser(Object.assign({}, currentUser, this.state));
   }
 
+  
   render() { 
     return ( 
       <div className="user-profile">

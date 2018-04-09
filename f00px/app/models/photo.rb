@@ -13,9 +13,8 @@ class Photo < ApplicationRecord
 
     def self.dashboard(id)
       Photo 
-        .joins("INNER JOIN follows ON photos.author_id = follows.followed_id")
-        .where("follows.follower_id = :id", id: id) 
-        .limit(40)
+        .joins("LEFT OUTER JOIN follows ON photos.author_id = follows.followed_id")
+        # .where("follows.follower_id = :id", id: id) 
     end 
 end
 
