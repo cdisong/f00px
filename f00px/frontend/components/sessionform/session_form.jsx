@@ -107,12 +107,15 @@ class SessionForm extends React.Component {
     switchButton() {
         return (this.state.logIn) ? <h3>Don't have an account? Sign up</h3> : <h3>Already have an account? Log in</h3>;
     }
-
+    
     render() {
         return(
             <nav className="login-signup">
-                <button onClick={this.openModal.bind(this, true)}> Log in</button>
-                <button onClick={this.openModal.bind(this, false)}>Sign up</button>
+                <h2>F00PX</h2>
+                <div className="splash-login-signup-buttons">
+                    <button onClick={this.openModal.bind(this, true)}> Log in</button>
+                    <button onClick={this.openModal.bind(this, false)}>Sign up</button>
+                </div>
 
                     <Modal 
                     contentLabel="Modal"

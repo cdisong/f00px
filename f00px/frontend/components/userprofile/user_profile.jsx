@@ -156,8 +156,8 @@ class UserProfile extends React.Component {
               </div>
           </div>
         </section>
-        <div className="grid-container"> 
-          <div className="grid"> 
+        <div className="u-grid-container"> 
+          <div className="u-grid"> 
             {this.state.photos.map((photo) => {
               return (
                 <img src={photo.image_url}/>

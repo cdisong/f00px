@@ -18,7 +18,6 @@ Route,
 export const App = () => (
   <div> 
     <nav>
-      <h2>F00px</h2>
       <AuthRoute path="/" component={SessionFormContainer}/>
       <Route path="/" component={GreetingContainer} />
     </nav>

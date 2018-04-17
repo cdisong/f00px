@@ -2,7 +2,7 @@
 
 .splash-page { 
   display: flex; 
-  background: image-url("green.jpg");
+  background: image-url("background.jpeg");
   color: white;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,18 +12,10 @@
   height: 800px;
 }
 
-.login-signup-splash-header {
+.login-signup { 
   display: flex; 
-  justify-content: flex-start;
-  padding-top: 5px;
 }
 
-.login-signup-splash-header > a {
-  border: 1px solid white; 
-  margin: 5px;
-  padding: 5px 8px;
-  font-size: 18px;
-}
 
 .headers {
   border-bottom: 1px solid white;
