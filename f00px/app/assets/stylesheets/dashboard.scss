@@ -4,15 +4,15 @@
   display: flex;
   align-items: center; 
   justify-content: center; 
-  margin: 10px;
+  margin: 15px;
 }
 .grid,
 .grid-home {
-  line-height: 5px;
+  line-height: 10px;
   column-count: 4;
-  column-gap: 5px;  
+  column-gap: 10px;  
 }
 
 .photo-item img {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }

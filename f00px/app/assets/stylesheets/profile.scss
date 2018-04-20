@@ -7,10 +7,35 @@
   background-color: #bcbcdb;
 }
 
-.u-grid-container {
-   display: flex;
+.mover {
+  margin: 20px;
+  position: fixed; 
+  left: 3px;
+  top: 64px;
 }
 
+
+.user-profile-container {
+  margin: 82px;
+
+  // position: fixed; 
+  // top:2%; right:2%;
+}
+
+.u-grid-container {
+  //  display: flex;
+  //  flex-direction: row; 
+  //  flex-wrap: wrap;
+  //  justify-content: center;
+  margin: 20px;
+  line-height: 10px; 
+  column-count: 3; 
+  column-gap: 10px;
+}
+
+.u-grid-container img {
+  margin-bottom: 10px;
+}
 // .followers-container { 
 //   display: flex; 
 //   flex-direction: column;

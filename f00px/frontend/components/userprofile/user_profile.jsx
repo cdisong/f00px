@@ -113,16 +113,16 @@ class UserProfile extends React.Component {
     return ( 
       <div className="user-profile">
         <section className="user-profile-container">
+          <section className="mover">
           <div className="user-details">
             <div className="image_user">
               <img src={this.state.user.profile_img_url}/>
             </div>
-            <br/>
-            <br/>
               {this.state.user.username}
             <br/>                
             <br/>
               {this.state.user.description}
+              <br/>
               <br/>
               <button onClick={this.modalOpen}>Update Description</button>
               <Modal 
@@ -155,6 +155,7 @@ class UserProfile extends React.Component {
               <button onClick={this.openFollowingModal}>Following</button>
               </div>
           </div>
+          </section>
         </section>
         <div className="u-grid-container"> 
           <div className="u-grid"> 
@@ -228,8 +229,7 @@ class UserProfile extends React.Component {
                 })}
               </section>
             </Modal>
-      
-      </div>
+          </div>
     );
   }
 }
