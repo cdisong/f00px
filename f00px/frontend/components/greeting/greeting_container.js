@@ -4,8 +4,9 @@ import { createSinglePhoto } from '../../actions/photo_actions';
 
 import Greeting from './greeting';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = (state) => ({
+  currentUser: state.session.currentUser,
+  errors: state.errors
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     formType, 
     logout: () => dispatch(logout()),
     uploadPhoto: () => dispatch(createSinglePhoto()),
+    createSinglePhoto: photo => dispatch(createSinglePhoto(photo))
   };
 };
 
