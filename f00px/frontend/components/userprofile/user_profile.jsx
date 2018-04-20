@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 import Modal from 'react-modal'; 
+import PhotoIndexItem from '../photosdashboard/photos_index_item';
 
 const style = {
   overlay : {
@@ -41,7 +42,8 @@ class UserProfile extends React.Component {
       isCurrentUser: true, 
       modalOpen: false,
       followerModalOpen: false, 
-      followingModalOpen: false
+      followingModalOpen: false,
+      photoDetailIsOpen: false
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.modalOpen = this.modalOpen.bind(this);
@@ -50,6 +52,8 @@ class UserProfile extends React.Component {
     this.closeFollowerModal = this.closeFollowerModal.bind(this);
     this.openFollowingModal = this.openFollowingModal.bind(this);
     this.closeFollowingModal = this.closeFollowingModal.bind(this);
+    this.closePhotoDetail = this.closePhotoDetail.bind(this); 
+    this.openPhotoDetail = this.openPhotoDetail.bind(this);
     // this.changeUsers = this.changeUsers.bind(this);
   }
   
@@ -89,6 +93,15 @@ class UserProfile extends React.Component {
   closeFollowingModal() {
     this.setState({followingModalOpen: false});
   }
+
+  closePhotoDetail() {
+    this.setState({photoDetailIsOpen: false});
+  }
+
+  openPhotoDetail() {
+    this.setState({photoDetailIsOpen: true});
+  }
+
 
   componentDidMount() { 
     this.props.fetchUsers(); 
@@ -161,7 +174,42 @@ class UserProfile extends React.Component {
           <div className="u-grid"> 
             {this.state.photos.map((photo) => {
               return (
-                <img src={photo.image_url}/>
+                <PhotoIndexItem 
+                  key={photo.id}
+                  photo={photo} />
+                // <div>
+
+                //   <button onClick={this.openPhotoDetail}>
+                //     <img src={photo.image_url}/>
+                //   </button>
+                //   <Modal 
+                //   contentLabel="Modal"
+                //   isOpen={this.state.photoDetailIsOpen}
+                //   onRequestClose={this.closePhotoDetail}
+                //   shouldCloseOnOverlayClick={true} 
+                //   style={style}> 
+                //     <strong className="x-button"><button onClick={this.closePhotoDetail}>x</button></strong>
+                //     <br/>
+                //     <div className="u-detail-view">
+                //       <div className="u-images">
+                //         <img src={photo.image_url}/> 
+                //       </div>
+                //       <div className="desc">
+                //         <div className="words">
+                //         <u>Photographer</u> 
+                //         </div>
+                //         {photo.author.username}
+                //         <br/>
+                //         <br/>
+                //         <br/>
+                //         <div className="words">
+                //         <u>Description</u>
+                //         </div>
+                //         {photo.description}
+                //       </div>
+                //     </div>
+                // </Modal>
+                // </div>
               );
             })}
           </div>

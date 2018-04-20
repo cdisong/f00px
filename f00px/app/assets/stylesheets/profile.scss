@@ -36,6 +36,11 @@
 .u-grid-container img {
   margin-bottom: 10px;
 }
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
 // .followers-container { 
 //   display: flex; 
 //   flex-direction: column;

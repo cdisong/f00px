@@ -21,7 +21,7 @@ const style = {
     right           : '100px',
     bottom          : '100px',
     margin          : 'auto',
-    width           : '400px',
+    width           : '1600px',
     height          : '400px',
     padding         : '15px',
     zIndex          : 11
