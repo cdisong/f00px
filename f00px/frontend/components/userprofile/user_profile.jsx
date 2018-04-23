@@ -4,6 +4,8 @@ import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 import Modal from 'react-modal'; 
 import PhotoIndexItem from '../photosdashboard/photos_index_item';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 
 const style = {
   overlay : {
@@ -33,6 +35,10 @@ const style = {
   }
 };
 
+const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
+
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props); 
@@ -40,6 +46,7 @@ class UserProfile extends React.Component {
       user: this.props.currentUser, 
       photos: this.props.photos,
       isCurrentUser: true, 
+      openModal: false,
       modalOpen: false,
       followerModalOpen: false, 
       followingModalOpen: false,
@@ -54,9 +61,21 @@ class UserProfile extends React.Component {
     this.closeFollowingModal = this.closeFollowingModal.bind(this);
     this.closePhotoDetail = this.closePhotoDetail.bind(this); 
     this.openPhotoDetail = this.openPhotoDetail.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this); 
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
     // this.changeUsers = this.changeUsers.bind(this);
   }
   
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.state !== nextState) {
+  //     return true;
+  //   } else { 
+  //     return false;
+  //   }
+  // }
   // componentWillReceiveProps(nextProps) {
   //   console.log(nextProps);
   //   if (this.state.user.id !== nextProps.users.id) {
@@ -68,7 +87,62 @@ class UserProfile extends React.Component {
   //     });
   //   }
   // }
-    
+  handleSubmit(e) {
+    e.preventDefault(); 
+    const photo = Object.assign({}, this.state);
+    this.props.createSinglePhoto(photo);
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+    .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+    .field('file', file);
+    upload.end((err, response) => {
+      if (response.body.secure_url !== '') {
+        this.setState({
+          image_url: response.body.secure_url
+        });
+      }
+    });
+  }
+
+  openModal() { 
+    this.setState({ openModal: true});
+  }
+
+  closeModal() {
+    this.setState({ openModal: false }); 
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  uploadedPhoto() {
+    if (this.state.image_url === '') {
+      return ( 
+        
+        <div className="drop-text"> Drop an image or click to select a file to upload.</div>
+      );
+    } else {
+      return ( 
+        <img className='photo-thumbnail' src={this.state.image_url}></img>
+      );
+    }
+  }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.photo.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   modalOpen() {
     this.setState({modalOpen: true});
@@ -167,6 +241,9 @@ class UserProfile extends React.Component {
               <div className="follower-button">
               <button onClick={this.openFollowingModal}>Following</button>
               </div>
+              <div className="follower-button">
+              <button onClick={this.openModal}>Upload Photo</button>
+              </div>
           </div>
           </section>
         </section>
@@ -177,43 +254,41 @@ class UserProfile extends React.Component {
                 <PhotoIndexItem 
                   key={photo.id}
                   photo={photo} />
-                // <div>
-
-                //   <button onClick={this.openPhotoDetail}>
-                //     <img src={photo.image_url}/>
-                //   </button>
-                //   <Modal 
-                //   contentLabel="Modal"
-                //   isOpen={this.state.photoDetailIsOpen}
-                //   onRequestClose={this.closePhotoDetail}
-                //   shouldCloseOnOverlayClick={true} 
-                //   style={style}> 
-                //     <strong className="x-button"><button onClick={this.closePhotoDetail}>x</button></strong>
-                //     <br/>
-                //     <div className="u-detail-view">
-                //       <div className="u-images">
-                //         <img src={photo.image_url}/> 
-                //       </div>
-                //       <div className="desc">
-                //         <div className="words">
-                //         <u>Photographer</u> 
-                //         </div>
-                //         {photo.author.username}
-                //         <br/>
-                //         <br/>
-                //         <br/>
-                //         <div className="words">
-                //         <u>Description</u>
-                //         </div>
-                //         {photo.description}
-                //       </div>
-                //     </div>
-                // </Modal>
-                // </div>
               );
             })}
           </div>
         </div>
+          <Modal 
+          contentLabel="UploadModal"
+          isOpen={this.state.openModal}
+          onRequestClose={this.closeModal}
+          shouldCloseOnOverlayClick={true}
+          style={style}>
+            <form onSubmit={this.handleSubmit} className="photo-upload-form"> 
+              <div className="photo-upload">
+                <Dropzone
+                  multiple={false}
+                  accept="image/*"
+                  onDrop={this.handleImageUpload}> 
+                  {this.uploadedPhoto()}
+                </Dropzone> 
+              </div> 
+
+              <div> 
+                <div className="upload-description">
+                  <label> <strong><u>Description</u></strong>
+                    <br/>
+                    <input type="text"
+                      value={this.state.description}
+                      onChange={this.update('description')}
+                    />
+                  </label>
+                </div>
+                {this.renderErrors()}
+                <input className="upload" type="submit" value="Upload" onClick={this.closeModal}> UPLOAD </input>
+              </div> 
+            </form> 
+        </Modal>
         <Modal 
           contentLabel="FollowerModal"
           isOpen={this.state.followerModalOpen}

@@ -36,6 +36,7 @@ class PhotoUpload extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
+      author: this.props.currentUser.username,
       image_url: "",
       description: "", 
       modalOpen: false

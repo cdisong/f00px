@@ -2,8 +2,8 @@
 
 .splash-page { 
   display: flex; 
-  background: image-url("background.jpeg");
-  color: white;
+  background: image-url("clouds.jpeg");
+  color: grey;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,7 +18,7 @@
 
 
 .headers {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid grey;
   padding-bottom: 5px;
 }
 
@@ -44,7 +44,7 @@
   padding: 10px;
   margin: 5px;
   padding: 5px 8px;
-  border: 1px solid white;
+  border: 1px solid grey;
   border-radius: 0px;
 }
 
