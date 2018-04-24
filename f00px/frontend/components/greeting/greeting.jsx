@@ -30,99 +30,99 @@ const style = {
 };
 
 
-const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
+// const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
+// const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props); 
-    this.state = {
-      image_url: "",
-      description: "", 
-      modalOpen: false
-    };
-    this.handleImageUpload = this.handleImageUpload.bind(this); 
-    this.update = this.update.bind(this);
+    // this.state = {
+    //   image_url: "",
+    //   description: "", 
+    //   modalOpen: false
+    // };
+    // this.handleImageUpload = this.handleImageUpload.bind(this); 
+    // this.update = this.update.bind(this);
     // this.onImageDrop = this.onImageDrop.bind(this); 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
   }
 
 
-  openModal() { 
-    this.setState({ modalOpen: true});
-  }
+  // openModal() { 
+  //   this.setState({ modalOpen: true});
+  // }
 
-  closeModal() {
-    this.setState({ modalOpen: false }); 
-  }
+  // closeModal() {
+  //   this.setState({ modalOpen: false }); 
+  // }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  // update(field) {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   });
+  // }  
 
-  handleSubmit(e) {
-    e.preventDefault(); 
-    const photo = Object.assign({}, this.state);
-    this.props.createSinglePhoto(photo);
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault(); 
+  //   const photo = Object.assign({}, this.state);
+  //   this.props.createSinglePhoto(photo);
+  // }
 
-  handleImageUpload(file) {
-    let upload = request.post(CLOUDINARY_UPLOAD_URL)
-    .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-    .field('file', file);
-    upload.end((err, response) => {
-      if (response.body.secure_url !== '') {
-        this.setState({
-          image_url: response.body.secure_url
-        });
-      }
-    });
-  }
+  // handleImageUpload(file) {
+  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
+  //   .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+  //   .field('file', file);
+  //   upload.end((err, response) => {
+  //     if (response.body.secure_url !== '') {
+  //       this.setState({
+  //         image_url: response.body.secure_url
+  //       });
+  //     }
+  //   });
+  // }
 
-  uploadedPhoto() {
-    if (this.state.image_url === '') {
-      return ( 
+  // uploadedPhoto() {
+  //   if (this.state.image_url === '') {
+  //     return ( 
         
-        <div className="drop-text"> Drop an image or click to select a file to upload.</div>
-      );
-    } else {
-      return ( 
-        <img className='photo-thumbnail' src={this.state.image_url}></img>
-      );
-    }
-  }
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.photo.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  //       <div className="drop-text"> Drop an image or click to select a file to upload.</div>
+  //     );
+  //   } else {
+  //     return ( 
+  //       <img className='photo-thumbnail' src={this.state.image_url}></img>
+  //     );
+  //   }
+  // }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.photo.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
-  sessionLinks(){ 
-    if (this.props.formType === 'login'){
-      return(
-        <nav className="login-signup"> 
-          <Link to="/signup">Sign Up</Link>
-        </nav> 
-      ); 
-    }
-    else if (this.props.formType === "signup"){
-      return(
-        <nav className="login-signup"> 
-          <Link to="/login">Log in</Link> 
-        </nav>
-      );
-    }
-  }
+  // sessionLinks(){ 
+  //   if (this.props.formType === 'login'){
+  //     return(
+  //       <nav className="login-signup"> 
+  //         <Link to="/signup">Sign Up</Link>
+  //       </nav> 
+  //     ); 
+  //   }
+  //   else if (this.props.formType === "signup"){
+  //     return(
+  //       <nav className="login-signup"> 
+  //         <Link to="/login">Log in</Link> 
+  //       </nav>
+  //     );
+  //   }
+  // }
  
   personalGreeting(){
     let currentUser = this.props.currentUser; 
@@ -158,7 +158,7 @@ class Greeting extends React.Component {
   render(){
     return(
       <div>
-        <Modal 
+        {/* <Modal 
       contentLabel="UploadModal"
       isOpen={this.state.modalOpen}
       onRequestClose={this.closeModal}
@@ -188,7 +188,7 @@ class Greeting extends React.Component {
             <input className="upload" type="submit" value="Upload"/>
           </div> 
         </form> 
-      </Modal>
+      </Modal> */}
         {this.personalGreeting()}
       </div> 
     );
