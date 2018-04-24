@@ -8,10 +8,11 @@ class PhotosIndex extends React.Component {
   }
   componentDidMount() {
     this.props.getAllPhotos();
+    this.props.fetchUsers();
   }
   render () {
     const { photos } = this.props; 
-
+    const { users } = this.props;
     return(
       <div className="grid-container">
         <div className="grid"> 
@@ -19,7 +20,8 @@ class PhotosIndex extends React.Component {
             return (
               <PhotoIndexItem 
                 key={photo.id}
-                photo={photo} />
+                photo={photo} 
+              /> 
             );
           })}
         </div>

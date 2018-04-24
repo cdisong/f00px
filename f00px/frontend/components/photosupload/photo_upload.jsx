@@ -45,17 +45,17 @@ class PhotoUpload extends React.Component {
     this.update = this.update.bind(this);
     // this.onImageDrop = this.onImageDrop.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
   }
 
-  openModal() { 
-    this.setState({ modalOpen: true});
-  }
+  // openModal() { 
+  //   this.setState({ modalOpen: true});
+  // }
 
-  closeModal() {
-    this.setState({ modalOpen: false }); 
-  }
+  // closeModal() {
+  //   this.setState({ modalOpen: false }); 
+  // }
 
   update(field) {
     return e => this.setState({
@@ -116,12 +116,13 @@ class PhotoUpload extends React.Component {
 
   render() {
     return( 
-      <Modal 
-      contentLabel="UploadModal"
-      isOpen={this.state.modalOpen}
-      onRequestClose={this.closeModal}
-      shouldCloseOnOverlayClick={true}
-      style={style}>
+      // <Modal 
+      // contentLabel="UploadModal"
+      // isOpen={this.state.modalOpen}
+      // onRequestClose={this.closeModal}
+      // shouldCloseOnOverlayClick={true}
+      // style={style}>
+      <div className="upload">
         <form onSubmit={this.handleSubmit} className="photo-upload-form"> 
           <div className="photo-upload">
             <Dropzone
@@ -139,14 +140,15 @@ class PhotoUpload extends React.Component {
                 <input type="text"
                   value={this.state.description}
                   onChange={this.update('description')}
-                />
+                  />
               </label>
             </div>
             {this.renderErrors()}
             <input className="upload" type="submit" value="Upload"/>
           </div> 
         </form> 
-      </Modal>
+      </div>
+      // </Modal>
     );
   }
 }

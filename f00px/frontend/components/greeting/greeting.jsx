@@ -137,9 +137,9 @@ class Greeting extends React.Component {
                 {/* <span className="dashboard">
                   <button onClick={this.openModal}>Upload</button>
                 </span> */}
-                  {/* <span className="upload">
+                  <span className="upload">
                     <Link to='/upload'>Upload</Link>
-                  </span> */}
+                  </span>
                 <span className="dashboard">
                   <Link to='/dashboard'>Home</Link>
                 </span>

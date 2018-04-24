@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser, 
     errors: state.errors,
+    photos: state.entities.photos 
   };
 };
 

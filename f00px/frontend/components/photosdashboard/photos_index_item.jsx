@@ -49,6 +49,7 @@ class PhotoIndexItem extends React.Component {
 
   render() {
     const { photo } = this.props; 
+    console.log(photo);
     return(
       <div> 
         <span className="photo-item">
