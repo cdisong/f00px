@@ -9,6 +9,7 @@ class PhotosIndex extends React.Component {
   componentDidMount() {
     this.props.getAllPhotos();
     this.props.fetchUsers();
+    this.props.getSinglePhoto();
   }
   render () {
     const { photos } = this.props; 

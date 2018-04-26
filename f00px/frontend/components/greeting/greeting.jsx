@@ -107,22 +107,22 @@ class Greeting extends React.Component {
   //   );
   // }
 
-  // sessionLinks(){ 
-  //   if (this.props.formType === 'login'){
-  //     return(
-  //       <nav className="login-signup"> 
-  //         <Link to="/signup">Sign Up</Link>
-  //       </nav> 
-  //     ); 
-  //   }
-  //   else if (this.props.formType === "signup"){
-  //     return(
-  //       <nav className="login-signup"> 
-  //         <Link to="/login">Log in</Link> 
-  //       </nav>
-  //     );
-  //   }
-  // }
+  sessionLinks(){ 
+    if (this.props.formType === 'login'){
+      return(
+        <nav className="login-signup"> 
+          <Link to="/signup">Sign Up</Link>
+        </nav> 
+      ); 
+    }
+    else if (this.props.formType === "signup"){
+      return(
+        <nav className="login-signup"> 
+          <Link to="/login">Log in</Link> 
+        </nav>
+      );
+    }
+  }
  
   personalGreeting(){
     let currentUser = this.props.currentUser; 
