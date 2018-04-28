@@ -30,7 +30,6 @@ export const App = () => (
     <Switch>
         <AuthRoute exact path="/splash" component={SplashContainer}/>
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
-      <ProtectedRoute path="/upload" component={PhotoUploadContainer} />
       <ProtectedRoute path="/profile" component={UserProfileContainer} />
       <ProtectedRoute path="/users/${users.id}" component={UsersProfileContainer} />
     </Switch>

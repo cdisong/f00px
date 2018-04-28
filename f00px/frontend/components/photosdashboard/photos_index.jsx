@@ -8,17 +8,27 @@ class PhotosIndex extends React.Component {
   }
   componentDidMount() {
     this.props.getAllPhotos();
-    this.props.fetchUsers();
+    // this.props.fetchUsers();
   }
-// componentWillReceiveProps(nextProps) {
-//     if (this.props.photos !== nextProps.photos) {
-      
-//     }
-//   }
+
+  shouldComponentUpdate(nextProps) {
+    if (this.props.photos.length !== nextProps.photos.length) {
+      return true; 
+    } else {
+      return false;
+    }
+  }
+
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.photos.length !== newProps.photos.length) {
+  //     this.setState(newProps);
+  //   }
+  // }
   
+
+
   render () {
     const { photos } = this.props; 
-    const { users } = this.props;
     return(
       <div className="grid-container">
         <div className="grid"> 
