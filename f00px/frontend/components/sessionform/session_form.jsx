@@ -122,6 +122,7 @@ class SessionForm extends React.Component {
                     isOpen={this.state.modalOpen}
                     onRequestClose={this.closeModal}
                     shouldCloseOnOverlayClick={true} 
+                    ariaHideApp={false}
                     style={style}>
                     <div className="login-form-all">
                             <div className="close-modal-x">

@@ -4,7 +4,7 @@ import FollowerIndexItem from './follower/follower_index_item';
 import FollowingIndexItem from './follower/following_index_item';
 import Modal from 'react-modal'; 
 import PhotoIndexItem from '../photosdashboard/photos_index_item';
-
+import { selectPhotosByUser } from '../../reducers/selectors';
 
 const style = {
   overlay : {
@@ -34,9 +34,6 @@ const style = {
   }
 };
 
-const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
-
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -45,7 +42,6 @@ class UserProfile extends React.Component {
       user: this.props.currentUser, 
       photos: this.props.photos,
       isCurrentUser: true, 
-      // openModal: false,
       modalOpen: false,
       followerModalOpen: false, 
       followingModalOpen: false,
@@ -100,6 +96,7 @@ class UserProfile extends React.Component {
 
   componentDidMount() { 
     this.props.fetchUsers(); 
+    this.setState({photos: selectPhotosByUser(this.props.allphotos, this.props.currentUser.photo_ids)});
   }
 
   update(field) {
@@ -135,6 +132,7 @@ class UserProfile extends React.Component {
                 isOpen={this.state.modalOpen}
                 onRequestClose={this.modalClose}
                 shouldCloseOnOverlayClick={true}
+                ariaHideApp={false}
                 style={style}>
               <form onSubmit={this.handleFormSubmit}>
               <br/>
@@ -180,7 +178,9 @@ class UserProfile extends React.Component {
           isOpen={this.state.followerModalOpen}
           onRequestClose={this.closeFollowerModal}
           shouldCloseOnOverlayClick={true}
+          ariaHideApp={false}
           style={style}>
+          
             <section className="followers-container">
               <button onClick={this.closeFollowerModal}>x</button>
             <u>Followed by {this.props.followers.length} users!</u>
@@ -212,6 +212,7 @@ class UserProfile extends React.Component {
             isOpen={this.state.followingModalOpen}
             onRequestClose={this.closeFollowingModal}
             shouldCloseOnOverlayClick={true}
+            ariaHideApp={false}
             style={style}>
               <section className="followers-container">
                 <button onClick={this.closeFollowingModal}>x</button>

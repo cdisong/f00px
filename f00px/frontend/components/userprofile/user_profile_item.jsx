@@ -1,20 +1,20 @@
-import React from 'react'; 
+// import React from 'react'; 
 
 
-class UserProfileItem extends React.Component { 
-  constructor(props) {
-    super(props); 
-  }
+// class UserProfileItem extends React.Component { 
+//   constructor(props) {
+//     super(props); 
+//   }
 
-  render() {
-    const { user } = this.props; 
-    return(
-      <div>
+//   render() {
+//     const { user } = this.props; 
+//     return(
+//       <div>
 
-        <span className="user-profile-item">
-          {user.username}
-        </span>
-      </div>
-    );
-  }
-}
+//         <span className="user-profile-item">
+//           {user.username}
+//         </span>
+//       </div>
+//     );
+//   }
+// }

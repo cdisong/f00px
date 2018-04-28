@@ -16,14 +16,15 @@ const mapStateToProps = (state) => {
   const following = selectUsersByFollow(state.entities.users, state.session.currentUser.following);
   const photos = selectPhotosByUser(state.entities.photos, state.session.currentUser.photo_ids);
   const users = Object.values(state.entities.users);
+
   return {
     currentUser: currentUser, 
     users,
     photos,
     followers,
     following, 
-    errors: state.errors
-
+    errors: state.errors,
+    allphotos: state.entities.photos
   };
 };
 
@@ -36,7 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
   getAllPhotos: () => dispatch(getAllPhotos()), 
   updateUser: (user) => dispatch(updateUser(user)), 
   fetchUsers: () => dispatch(fetchUsers()),
-  createSinglePhoto: photo => dispatch(createSinglePhoto(photo))
+  createSinglePhoto: photo => dispatch(createSinglePhoto(photo)),
 });
 
 export default connect(

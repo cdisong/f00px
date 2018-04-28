@@ -72,13 +72,6 @@ class Greeting extends React.Component {
     }
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state.modalOpen !== nextState.modalOpen) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   handleImageUpload(file) {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)

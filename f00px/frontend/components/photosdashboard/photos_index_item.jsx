@@ -61,6 +61,7 @@ class PhotoIndexItem extends React.Component {
           isOpen={this.state.photoDetailIsOpen}
           shouldCloseOnOverlayClick={true} 
           contentLabel="Modal"
+          ariaHideApp={false}
           style={style}> 
          <strong className="x-button"><button onClick={this.closePhotoDetail}>x</button></strong>
          <br/>
