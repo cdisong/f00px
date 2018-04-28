@@ -67,6 +67,9 @@ class Greeting extends React.Component {
     e.preventDefault(); 
     const photo = Object.assign({}, this.state);
     this.props.createSinglePhoto(photo);
+    if (this.state.image_url !== '') {
+      this.setState({ image_url: "", description: "", modalOpen: false});
+    }
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
