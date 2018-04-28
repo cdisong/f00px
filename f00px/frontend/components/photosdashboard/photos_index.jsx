@@ -19,6 +19,7 @@ class PhotosIndex extends React.Component {
   render () {
     const { photos } = this.props; 
     const { users } = this.props;
+    debugger;
     return(
       <div className="grid-container">
         <div className="grid"> 

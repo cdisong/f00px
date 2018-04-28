@@ -19,7 +19,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "superagent": "^3.8.2",
-    "webpack": "^3.11.0"
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
