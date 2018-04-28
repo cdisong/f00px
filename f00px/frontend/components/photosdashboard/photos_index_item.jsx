@@ -39,13 +39,6 @@ class PhotoIndexItem extends React.Component {
     this.openPhotoDetail = this.openPhotoDetail.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    // console.log('nay', this.props);
-    // console.log('hey', nextProps);
-    if (this.props.photo!== nextProps.photo) {
-      this.props.photo = nextProps.photo;
-    }
-  }
   
   closePhotoDetail() {
     this.setState({photoDetailIsOpen: false});
