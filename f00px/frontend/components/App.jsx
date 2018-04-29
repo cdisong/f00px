@@ -34,6 +34,21 @@ export const App = () => (
       <ProtectedRoute path="/users/:userId" component={UsersProfileContainer} />
       
     </Switch>
+
+     <Route exact path="/splash"
+      render={ () =>
+        <footer className="footer">
+          <section className="foot-left">
+            <h1>ASDJKF</h1>
+            <p>Hasjdfl;kasjdkfl;sajkldf;s a</p>
+          </section>
+          <section className="foot-right">
+            <a href="https://github.com/cdisong">Github</a>
+            <a href="https://www.linkedin.com/in/cdisong">LinkedIn</a>
+          </section>
+        </footer>
+      }
+    />
   </div> 
 ); 
 

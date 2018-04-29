@@ -14,8 +14,23 @@
 
 .login-signup { 
   display: flex; 
+  justify-content: space-between; 
+  padding: 5px;
 }
 
+.splash-login-signup-buttons {
+  display: flex;
+}
+
+.logo {
+  padding: 4px;
+  margin-left: 6px;
+}
+.ls-buttons {
+  border: solid black 1px;
+  padding: 3px;
+  margin-right: 6px;
+}
 
 .headers {
   border-bottom: 1px solid grey;

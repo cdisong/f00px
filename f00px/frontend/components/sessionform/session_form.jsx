@@ -111,10 +111,11 @@ class SessionForm extends React.Component {
     render() {
         return(
             <nav className="login-signup">
-                <h2>F00PX</h2>
+                <div className="logo"> <h2>F00PX</h2></div>
+               
                 <div className="splash-login-signup-buttons">
-                    <button onClick={this.openModal.bind(this, true)}> Log in</button>
-                    <button onClick={this.openModal.bind(this, false)}>Sign up</button>
+                   <div className="ls-buttons"><button onClick={this.openModal.bind(this, true)}>Log in</button></div> 
+                   <div className="ls-buttons"> <button onClick={this.openModal.bind(this, false)}>Sign up</button></div>
                 </div>
 
                     <Modal 
