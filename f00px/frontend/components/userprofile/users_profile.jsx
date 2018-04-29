@@ -93,7 +93,9 @@ class UsersProfile extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         // debugger;
-        if (this.state.userId !== nextProps.userId) {
+        if ((this.state.userId !== nextProps.userId) && (nextProps.userId === this.props.currentUserId)) {
+            this.props.history.push('/profile');
+        } else if (this.state.userId !== nextProps.userId) {
             this.props.fetchSingleUser(nextProps.match.params.userId);
             this.setState({
                 user: nextProps.user, 
@@ -102,9 +104,7 @@ class UsersProfile extends React.Component {
                 followers: selectUsersByFollow(this.props.users, nextProps.users[nextProps.userId].followers),
                 following: selectUsersByFollow(this.props.users, nextProps.users[nextProps.userId].following),
             });
-        } else if ((this.props.userId !== nextProps.match.params.userId) && (nextProps.match.params.userId === this.props.currentUserId)) {
-            this.props.history.push('/profile');
-        }
+        } 
     }
 
     render() {

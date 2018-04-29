@@ -16,6 +16,7 @@ const mapStateToProps = (state, myProps) => {
     return {
       user, 
       userId, 
+      currentUserId,
       // followers,
       // following, 
       photos: state.entities.photos,
