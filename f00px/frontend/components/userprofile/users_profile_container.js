@@ -9,6 +9,7 @@ import { selectUsersByFollow, selectPhotosByUser } from '../../reducers/selector
 const mapStateToProps = (state, myProps) => {
     const userId = parseInt(myProps.match.params.userId);
     const user = state.entities.users[parseInt(myProps.match.params.userId)];
+    const currentUserId = state.session.currentUser.id;
     // const photos = selectPhotosByUser(state.entities.photos, state.entities.users[parseInt(myProps.match.params.userId)].photo_ids);
     // const followers = selectUsersByFollow(state.entities.users, state.entities.users[parseInt(myProps.match.params.userId)].followers);
     // const following = selectUsersByFollow(state.entities.users, state.entities.users[parseInt(myProps.match.params.userId)].following);
@@ -17,8 +18,8 @@ const mapStateToProps = (state, myProps) => {
       userId, 
       // followers,
       // following, 
-      photos: Object.values(state.entities.photos),
-      users: Object.values(state.entities.users)
+      photos: state.entities.photos,
+      users: state.entities.users
     };
 };
 

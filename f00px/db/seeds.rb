@@ -19,19 +19,34 @@ user5 = User.create!(username: "I am tired", password: "password", description: 
 user7 = User.create!(username: "Anna", password: "password", description: "The Space Goat", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user8 = User.create!(username: "Chris", password: "password", description: "Something Something", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 
-Follow.create!(follower_id: demouser.id, followed_id: user4.id)
-Follow.create!(follower_id: user5.id, followed_id: demouser.id)
+Follow.create!(follower_id: demouser.id, followed_id: user4.id) #demouser is following 
+Follow.create!(follower_id: user5.id, followed_id: demouser.id) # demouser has follower 
 Follow.create!(follower_id: user7.id, followed_id: demouser.id)
 Follow.create!(follower_id: user8.id, followed_id: demouser.id)
 Follow.create!(follower_id: user3.id, followed_id: demouser.id)
 Follow.create!(follower_id: user2.id, followed_id: demouser.id)
 Follow.create!(follower_id: user1.id, followed_id: demouser.id)
-Follow.create!(follower_id: demouser.id, followed_id: user1.id)
+Follow.create!(follower_id: demouser.id, followed_id: user1.id) 
 Follow.create!(follower_id: demouser.id, followed_id: user2.id)
 Follow.create!(follower_id: demouser.id, followed_id: user3.id)
 Follow.create!(follower_id: demouser.id, followed_id: user7.id)
 Follow.create!(follower_id: demouser.id, followed_id: user5.id)
 Follow.create!(follower_id: demouser.id, followed_id: user8.id)
+
+Follow.create!(follower_id: user1.id, followed_id: user4.id)
+Follow.create!(follower_id: user1.id, followed_id: user3.id)
+Follow.create!(follower_id: user1.id, followed_id: user7.id)
+Follow.create!(follower_id: user1.id, followed_id: user5.id)
+Follow.create!(follower_id: user1.id, followed_id: user8.id)
+
+Follow.create!(follower_id: user4.id, followed_id: user1.id)
+Follow.create!(follower_id: user3.id, followed_id: user1.id)
+Follow.create!(follower_id: user2.id, followed_id: user1.id)
+Follow.create!(follower_id: user7.id, followed_id: user1.id)
+Follow.create!(follower_id: user5.id, followed_id: user1.id)
+Follow.create!(follower_id: user8.id, followed_id: user1.id)
+
+
 
 
 photo1 = Photo.create!(description: "Earth day 2017", author_id: demouser.id, image_url: "http://res.cloudinary.com/cdisong/image/upload/v1511848535/earthday.png")

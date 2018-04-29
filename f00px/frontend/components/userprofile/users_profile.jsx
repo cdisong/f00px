@@ -38,6 +38,7 @@ class UsersProfile extends React.Component {
         super(props); 
         this.state = {
             user: this.props.user, 
+            userId: this.props.userId, 
             photos: selectPhotosByUser(this.props.photos, this.props.users[this.props.userId].photo_ids), 
             followers: selectUsersByFollow(this.props.users, this.props.users[this.props.userId].followers),
             following: selectUsersByFollow(this.props.users, this.props.users[this.props.userId].following),
@@ -81,7 +82,33 @@ class UsersProfile extends React.Component {
     componentDidMount() {
         this.props.fetchSingleUser(this.props.userId);
     }
+
+    shouldComponentUpdate(nextProps) {
+        if (this.props.userId !== nextProps.match.params.userId) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        // debugger;
+        if (this.state.userId !== nextProps.userId) {
+            this.props.fetchSingleUser(nextProps.match.params.userId);
+            this.setState({
+                user: nextProps.user, 
+                userId: nextProps.userId,
+                photos: selectPhotosByUser(this.props.photos, nextProps.users[nextProps.userId].photo_ids), 
+                followers: selectUsersByFollow(this.props.users, nextProps.users[nextProps.userId].followers),
+                following: selectUsersByFollow(this.props.users, nextProps.users[nextProps.userId].following),
+            });
+        } else if ((this.props.userId !== nextProps.match.params.userId) && (nextProps.match.params.userId === this.props.currentUserId)) {
+            this.props.history.push('/profile');
+        }
+    }
+
     render() {
+        // debugger;
         return ( 
             <div className="user-profile">
             <section className="user-profile-container">
