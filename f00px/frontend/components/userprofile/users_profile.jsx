@@ -1,14 +1,192 @@
 import React from 'react'; 
+import Modal from 'react-modal'; 
+import { Route, Link, withRouter } from 'react-router-dom'; 
 
+import PhotoIndexItem from '../photosdashboard/photos_index_item';
+import { selectUsersByFollow, selectPhotosByUser } from '../../reducers/selectors';
+
+const style = {
+    overlay : {
+      position        : 'fixed',
+      top             : 0,
+      left            : 0,
+      right           : 0,
+      bottom          : 0,
+      backgroundColor : 'rgba(255,255,255, 0.7)',
+      zIndex          : 10
+    },
+    content : {
+      position        : 'fixed',
+      top             : '100px',
+      left            : '100px',
+      right           : '100px',
+      bottom          : '100px',
+      margin          : 'auto',
+      width           : '400px',
+      height          : '400px',
+      // border          : '1px solid #sccc',
+      padding         : '15px',
+      zIndex          : 11
+  
+      // opacity         : '',
+      // transition      : 'opacity 2s'
+    }
+  };
+  
 class UsersProfile extends React.Component { 
     constructor(props){
         super(props); 
-
+        this.state = {
+            user: this.props.user, 
+            photos: selectPhotosByUser(this.props.photos, this.props.users[this.props.userId].photo_ids), 
+            followers: selectUsersByFollow(this.props.users, this.props.users[this.props.userId].followers),
+            following: selectUsersByFollow(this.props.users, this.props.users[this.props.userId].following),
+            followerModalOpen: false, 
+            followingModalOpen: false,
+            photoDetailIsOpen: false
+        };
+    this.openFollowerModal = this.openFollowerModal.bind(this);
+    this.closeFollowerModal = this.closeFollowerModal.bind(this);
+    this.openFollowingModal = this.openFollowingModal.bind(this);
+    this.closeFollowingModal = this.closeFollowingModal.bind(this);
+    this.closePhotoDetail = this.closePhotoDetail.bind(this); 
+    this.openPhotoDetail = this.openPhotoDetail.bind(this);
     }
 
+
+    openFollowerModal() {
+        this.setState({followerModalOpen: true});
+    }
+
+    closeFollowerModal() {
+        this.setState({followerModalOpen: false}); 
+    }
+
+    openFollowingModal() {
+        this.setState({followingModalOpen: true});
+    }
+
+    closeFollowingModal() {
+        this.setState({followingModalOpen: false});
+    }
+
+    closePhotoDetail() {
+        this.setState({photoDetailIsOpen: false});
+    }
+
+    openPhotoDetail() {
+        this.setState({photoDetailIsOpen: true});
+    }
+
+    componentDidMount() {
+        this.props.fetchSingleUser(this.props.userId);
+    }
     render() {
         return ( 
-            <div></div>
+            <div className="user-profile">
+            <section className="user-profile-container">
+              <section className="mover">
+              <div className="user-details">
+                <div className="image_user">
+                  <img src={this.state.user.profile_img_url}/>
+                </div>
+                  {this.state.user.username}
+                <br/>                
+                <br/>
+                  {this.state.user.description}
+                  <br/>
+                  <br/>
+                  
+    
+                  <div className="follower-button">
+                  <button onClick={this.openFollowerModal}>Followers</button>
+                  </div>
+                  <div className="follower-button">
+                  <button onClick={this.openFollowingModal}>Following</button>
+                  </div>
+                 
+              </div>
+              </section>
+            </section>
+            <div className="u-grid-container"> 
+              <div className="u-grid"> 
+                {this.state.photos.map((photo) => {
+                  return (
+                    <PhotoIndexItem 
+                      key={photo.id}
+                      photo={photo} />
+                  );
+                })}
+              </div>
+            </div>
+              
+            <Modal 
+              contentLabel="FollowerModal"
+              isOpen={this.state.followerModalOpen}
+              onRequestClose={this.closeFollowerModal}
+              shouldCloseOnOverlayClick={true}
+              ariaHideApp={false}
+              style={style}>
+              
+                <section className="followers-container">
+                  <button onClick={this.closeFollowerModal}>x</button>
+                <u>Followed by {this.state.followers.length} users!</u>
+                  {this.state.followers.map((user) => {
+                    return (
+                    <div className="followers">
+                            <li key={`followers-${user.id}`}>
+                              <Link to={`/users/${user.id}`} onClick={this.closeFollowerModal}>
+                              <section className="follower-details">
+                                <div className="image">
+                                  <img src={user.profile_img_url}/>
+                                </div>
+                                <section className="text-details">
+                                  <br/>
+                                  <h2>{user.username}</h2>
+                                  <br/>                        
+                                  <h2>{user.description}</h2>
+                                </section>
+                              </section>
+                              </Link>
+                            </li>
+                    </div>
+                    );
+                  })}
+                  </section>
+              </Modal>
+              <Modal 
+                contentLabel="FollowingModal"
+                isOpen={this.state.followingModalOpen}
+                onRequestClose={this.closeFollowingModal}
+                shouldCloseOnOverlayClick={true}
+                ariaHideApp={false}
+                style={style}>
+                  <section className="followers-container">
+                    <button onClick={this.closeFollowingModal}>x</button>
+    
+                  <u>Following {this.state.following.length} users!</u>
+                    {this.state.following.map((user) => {
+                      return (
+                      <div className="followers">
+                              <li key={`following-${user.id}`}>
+                                <section className="follower-details">
+                                  <div className="image">
+                                    <img src={user.profile_img_url}/>
+                                  </div>
+                                  <section className="text-details">
+                                      <h2>{user.username}</h2>
+                                    <br/>                          
+                                      <h2>{user.description}</h2>
+                                  </section>
+                                </section>
+                              </li>
+    
+                      </div>
+                      );
+                    })}
+                  </section>
+                </Modal>
+              </div>
         );
     }
 }

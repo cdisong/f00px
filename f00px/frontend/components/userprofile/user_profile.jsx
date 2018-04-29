@@ -1,11 +1,9 @@
 import React from 'react'; 
-import { Link, withRouter } from 'react-router-dom'; 
-import FollowerIndexItem from './follower/follower_index_item';
-import FollowingIndexItem from './follower/following_index_item';
+import { Route, Link, withRouter } from 'react-router-dom'; 
 import Modal from 'react-modal'; 
 import PhotoIndexItem from '../photosdashboard/photos_index_item';
 import { selectPhotosByUser } from '../../reducers/selectors';
-
+import UsersProfileContainer from './users_profile_container';
 const style = {
   overlay : {
     position        : 'fixed',
