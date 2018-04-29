@@ -134,28 +134,25 @@ class UserProfile extends React.Component {
                 style={style}>
               <form onSubmit={this.handleFormSubmit}>
               <br/>
-              <button onClick={this.modalClose}>x</button>
-
               <section className="update">
                 <label> <section className="udescription"><u>Update Description</u></section>
                   <br/>
                   <input type="text" 
                     onChange={this.update('description')} 
                     className="description-edit"
+                    placeholder="Description"
                     />
                 </label>
                 <input type="submit" value="Update Description"/>
                 </section>
               </form>
               </Modal>
-
               <div className="follower-button">
               <button onClick={this.openFollowerModal}>Followers</button>
               </div>
               <div className="follower-button">
               <button onClick={this.openFollowingModal}>Following</button>
               </div>
-             
           </div>
           </section>
         </section>
@@ -178,26 +175,25 @@ class UserProfile extends React.Component {
           shouldCloseOnOverlayClick={true}
           ariaHideApp={false}
           style={style}>
-          
             <section className="followers-container">
-              <button onClick={this.closeFollowerModal}>x</button>
-            <u>Followed by {this.props.followers.length} users!</u>
+            <strong className="follower-heading">Followed by {this.props.followers.length} users!</strong>
+            <br/>
               {this.props.followers.map((user) => {
                 return (
                 <div className="followers">
                         <li key={`followers-${user.id}`}>
                           <Link to={`/users/${user.id}`} onClick={this.closeFollowerModal}>
-                          <section className="follower-details">
+                          <div className="follower-details">
                             <div className="image">
                               <img src={user.profile_img_url}/>
                             </div>
-                            <section className="text-details">
+                            <div className="text-details">
                               <br/>
                               <h2>{user.username}</h2>
                               <br/>                        
                               <h2>{user.description}</h2>
-                            </section>
-                          </section>
+                            </div>
+                          </div>
                           </Link>
                         </li>
                 </div>
@@ -213,27 +209,25 @@ class UserProfile extends React.Component {
             ariaHideApp={false}
             style={style}>
               <section className="followers-container">
-                <button onClick={this.closeFollowingModal}>x</button>
-
-              <u>Following {this.props.following.length} users!</u>
+              <strong className="follower-heading">Following {this.props.following.length} users!</strong>
+              <br/>
                 {this.props.following.map((user) => {
                   return (
                   <div className="followers">
                           <li key={`following-${user.id}`}>
                           <Link to={`/users/${user.id}`} onClick={this.closeFollowerModal}>
-                            <section className="follower-details">
+                            <div className="follower-details">
                               <div className="image">
                                 <img src={user.profile_img_url}/>
                               </div>
-                              <section className="text-details">
+                              <div className="text-details">
                                   <h2>{user.username}</h2>
                                 <br/>                          
                                   <h2>{user.description}</h2>
-                              </section>
-                            </section>
+                              </div>
+                            </div>
                             </Link>
                           </li>
-
                   </div>
                   );
                 })}

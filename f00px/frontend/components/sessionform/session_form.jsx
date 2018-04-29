@@ -126,10 +126,6 @@ class SessionForm extends React.Component {
                     ariaHideApp={false}
                     style={style}>
                     <div className="login-form-all">
-                            <div className="close-modal-x">
-                                <strong className="x-button"><button onClick={this.closeModal}>x</button></strong>
-                            </div>
-
                             <form className="login-form-box">
                                 {this.formHeading()}
                                 <br/>

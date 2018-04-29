@@ -146,9 +146,6 @@ class Greeting extends React.Component {
                 <div className="dashboard">
                   <button onClick={this.openModal}>Upload</button>
                 </div>
-                  {/* <div className="upload">
-                    <Link to='/upload'>Upload</Link>
-                  </div> */}
                 <div className="dashboard">
                   <Link to='/dashboard'>Home</Link>
                 </div>
@@ -191,7 +188,7 @@ class Greeting extends React.Component {
                 <input type="text"
                   value={this.state.description}
                   onChange={this.update('description')}
-                />
+                  placeholder="Description"/>
               </label>
             </div>
             {this.renderErrors()}
