@@ -46,6 +46,7 @@ class Greeting extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
+    // this.logout = this.logout.bind(this)
   }
 
 
@@ -109,6 +110,11 @@ class Greeting extends React.Component {
       </ul>
     );
   }
+  
+  // logout() {
+  //   this.props.logout;
+  //   this.props.history.push('./splash');
+  // }
 
   sessionLinks(){ 
     if (this.props.formType === 'login'){

@@ -71,6 +71,7 @@ class PhotoIndexItem extends React.Component {
             </div>
             <div className="desc">
               <div className="words">
+
               <u>Photographer</u> 
               </div>
               {photo.author.username}

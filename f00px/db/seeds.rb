@@ -18,7 +18,7 @@ user4 = User.create!(username: "Janet", password: "password", description: "I li
 user5 = User.create!(username: "Penelope", password: "password", description: "I love puppies!", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png" )
 # user5 = User.create!(username: "I am tired", password: "password", description: "I would like to sleep.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 # user7 = User.create!(username: "Anna", password: "password", description: "The Space Goat", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user6 = User.create!(username: "Chris", password: "password", description: "", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user6 = User.create!(username: "Chris", password: "password", description: "Hiker/Photographer", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 
 Follow.create!(follower_id: demouser.id, followed_id: user4.id) #demouser is following 
 Follow.create!(follower_id: user5.id, followed_id: demouser.id) # demouser has follower 

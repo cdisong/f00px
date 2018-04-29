@@ -220,6 +220,7 @@ class UserProfile extends React.Component {
                   return (
                   <div className="followers">
                           <li key={`following-${user.id}`}>
+                          <Link to={`/users/${user.id}`} onClick={this.closeFollowerModal}>
                             <section className="follower-details">
                               <div className="image">
                                 <img src={user.profile_img_url}/>
@@ -230,6 +231,7 @@ class UserProfile extends React.Component {
                                   <h2>{user.description}</h2>
                               </section>
                             </section>
+                            </Link>
                           </li>
 
                   </div>

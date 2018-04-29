@@ -31,7 +31,7 @@ export const App = () => (
         <AuthRoute exact path="/splash" component={SplashContainer}/>
       <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
       <ProtectedRoute path="/profile" component={UserProfileContainer} />
-      <Route path="/users/:userId" component={UsersProfileContainer} />
+      <ProtectedRoute path="/users/:userId" component={UsersProfileContainer} />
       
     </Switch>
   </div> 
