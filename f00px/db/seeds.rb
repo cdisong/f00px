@@ -12,8 +12,8 @@ Follow.destroy_all
 
 demouser = User.create!(username: "DemoUser", password: "password", description: "Hi, I like pie.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user1 = User.create!(username: "Richard", password: "password", description: "What is a circle?", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user2 = User.create!(username: "Cindy", password: "password", description: "I have strawberry blonde hair.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
-user3 = User.create!(username: "Rummi", password: "password", description: "I am a software engineer", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user2 = User.create!(username: "Cindy", password: "password", description: "I am a singer.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
+user3 = User.create!(username: "Rummi", password: "password", description: "I live in Oregon", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user4 = User.create!(username: "Janet", password: "password", description: "I like things", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")
 user5 = User.create!(username: "Penelope", password: "password", description: "I love puppies!", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png" )
 # user5 = User.create!(username: "I am tired", password: "password", description: "I would like to sleep.", profile_img_url: "http://res.cloudinary.com/cdisong/image/upload/c_scale,h_124/v1512126883/anonymous.png")

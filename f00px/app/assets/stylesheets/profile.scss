@@ -4,7 +4,6 @@
   height: 100%;
   width: 100%;
   align-content: flex-end;
-  background-color: #bcbcdb;
 }
 
 .mover {
@@ -18,15 +17,11 @@
 .user-profile-container {
   margin: 82px;
 
-  // position: fixed; 
-  // top:2%; right:2%;
+ 
 }
 
 .u-grid-container {
-  //  display: flex;
-  //  flex-direction: row; 
-  //  flex-wrap: wrap;
-  //  justify-content: center;
+ 
   margin: 20px;
   line-height: 10px; 
   column-count: 3; 
@@ -41,124 +36,3 @@
   display: flex;
   flex-direction: column;
 }
-// .followers-container { 
-//   display: flex; 
-//   flex-direction: column;
-//   // border: 1px solid black; 
-//   margin: 15px;
-//   align-content: flex-end;
-  
-// }  
-
-// .followers-container > u { 
-//   display: flex; 
-//   margin: 5px;
-// }
-
-// .update { 
-//   display: flex; 
-//   flex-direction: column;
-//   justify-content: space-between;
-//   height: 150px;
-//   padding: 5px;
-//   margin: 9px;
-// }
-
-// button,input[type="text"] { 
-//   display: flex;
-//   border: 1px solid black;
-//   justify-content: flex-start;
-// }
-
-// .user-profile-container {
-//   display: flex; 
-//   flex-direction: column;
-//   margin: 15px;
-
-
-// }
-
-// .udescription {
-//   display: flex; 
-// }
-// .followers { 
-//   display: flex; 
-//   flex-direction: row;
-//   // border: 1px solid black; 
-//   margin: 15px;
-// }
-
-  
-// .follower-details { 
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-
-// }
-// .user-details { 
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   height: 100%;
-//   border: 1px solid black;
-//   align-items: center;
-//   // background-color: #39446e;
-
-  
-// }
-
-// .image_user { 
-//   margin-top: 15px;
-// }
-// .text-details {
-//   display: flex; 
-//   flex-direction: column;
-// }
-
-// .following-details { 
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-
-// }
-
-// .image_user { 
-//   display: flex;
-//   max-height: 100px; 
-//   max-width: 100px;
-// }
-
-// .image { 
-//   display: flex;
-//   max-height: 100px; 
-//   max-width: 100px;
-//   border-right: 1px solid black;
-//   margin-right: 9px;
-// }
-
-// .image-s { 
-//   display: flex;
-//   max-height: 100px; 
-//   max-width: 100px;
-//   border-right: 1px solid black;
-//   margin-right: 9px;
-// }
-
-
-// li {
-//   list-style: none;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,64 +1,28 @@
-// .upload {
-//   border: 1px solid #CCCBC1;
-//   border-radius: 15%;
-//   margin: 5px;
-//   padding: 5px;
-//   background-color: #CCCBC6;
-//   box-shadow: 2px 2px black;
 
-// }
-
-.dashboard {
-  // border: 1px solid #A9B7C0;
-  // border-radius: 15%;
-  // margin: 5px;
-  // padding: 5px;
-  // background-color: #A9B7C0;
-  // box-shadow: 2px 2px black;
-
-}
-
-// .profile {
-//   border: 1px solid #FBA100;
-//   border-radius: 15%;
-//   margin: 5px;
-//   padding: 5px;
-//   background-color: #FBA100;
-//   box-shadow: 2px 2px black;
-
-// }
-
-// .header-button {
-//   font-family: Arial, Helvetica, sans-serif;
-//   border-radius: 15%;
-//   border: 1px solid #6bbaa7;
-//   margin: 5px;
-//   padding: 5px;
-//   width: 70px;
-//   background-color: #6bbaa7;
-//   box-shadow: 2px 2px black;
-
-
-// }
-
-.header-name { 
-  // margin-left: 10px;
-  // margin-top: 4.5px;
-  // margin-bottom: 1.0px;
-  // padding: 5px;
-  // width: 150px;
-  // margin-right: 585px;
-}
 
 .buttons-on-top {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 12px;
+ 
+}
+
+
+.header-name { 
+  margin-left: 19px;
+  
+}
+
+.buttons {
   display: flex;
-  flex-direction: column;
-  // display: flex;
-  // justify-content: space-between;
-  // color: white;
-  // font-family: Arial, Helvetica, sans-serif;
-  // display: flex;
-  // justify-content: flex-end;
-  // padding-top: 6px;
-  // background-color: #39446e;
+
+}
+
+.dashboard {
+  margin-right: 10px;
+}
+
+.dashboards {
+  margin-right: 19px
 }

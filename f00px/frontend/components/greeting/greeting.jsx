@@ -140,21 +140,21 @@ class Greeting extends React.Component {
             <div className="buttons-on-top">
               <div className="header-name"> Hey, {currentUser.username}!</div> 
               <div className="buttons">
-                <span className="dashboard">
+                <div className="dashboard">
                   <button onClick={this.props.logout}>Log Out</button> 
-                </span>
-                <span className="dashboard">
+                </div>
+                <div className="dashboard">
                   <button onClick={this.openModal}>Upload</button>
-                </span>
-                  {/* <span className="upload">
+                </div>
+                  {/* <div className="upload">
                     <Link to='/upload'>Upload</Link>
-                  </span> */}
-                <span className="dashboard">
+                  </div> */}
+                <div className="dashboard">
                   <Link to='/dashboard'>Home</Link>
-                </span>
-                <span className="dashboard">
+                </div>
+                <div className="dashboards">
                   <Link to='/profile'>Profile</Link>
-                </span>
+                </div>
               </div>
               </div>
       );
