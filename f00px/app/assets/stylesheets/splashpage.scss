@@ -71,3 +71,32 @@
   border-radius: 0px;
 }
 
+// .login-f-input {
+//   margin-left: 41px;
+// }
+
+.login-form-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px;
+}
+
+.login-form-header { 
+  padding-top: 11px;
+}
+.login-input {
+    border-radius: 2px;
+    padding: 4px;
+    margin-bottom: 10px;
+    background-color: #a99c9c3d;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-buttonss {
+}

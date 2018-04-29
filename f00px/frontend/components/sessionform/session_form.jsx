@@ -13,14 +13,16 @@ const style = {
       zIndex          : 10
     },
     content : {
+    //   color           : 'white',
+    //   backgroundColor : 'black',
       position        : 'fixed',
       top             : '100px',
       left            : '100px', 
       right           : '100px',
       bottom          : '100px',
       margin          : 'auto',
-      width           : '400px',
-      height          : '400px',
+      width           : '300px',
+      height          : '345px',
       padding         : '15px',
       zIndex          : 11
   
@@ -125,37 +127,48 @@ class SessionForm extends React.Component {
                     shouldCloseOnOverlayClick={true} 
                     ariaHideApp={false}
                     style={style}>
-                    <div className="login-form-all">
                             <form className="login-form-box">
-                                {this.formHeading()}
-                                <br/>
-                                {this.renderErrors()}
-
-                                <div className="login-form">
-                                    <label>
-                                        <input type="text"
-                                        value={this.state.username}
-                                        onChange={this.update('username')}
-                                        className="login-input"
-                                        placeholder="Username"/>
-                                    </label>
-                                    <br/>
-                                    <label>
-                                        <input type="password"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        className="login-input"
-                                        placeHolder="Password"
-                                        />
-                                    </label>
-                                    <br/>
-                                    <button onClick={this.handleSubmit}>{this.formButton()}</button>
-                                    <p>or</p>
-                                    <button onClick={this.loadDemo}><h3>Guest Demo</h3></button>
-                                    <a href="/#" onClick={this.switchForms}>{this.switchButton()}</a>
+                                <div className="login-form-all">
+                                    <div className="login-form-header">
+                                        {this.formHeading()}
+                                        {this.renderErrors()}
+                                    </div>
+                                    <div className="form-holder">
+                                        <div className="login-f-input">
+                                            <label>
+                                                <input type="text"
+                                                value={this.state.username}
+                                                onChange={this.update('username')}
+                                                className="login-input"
+                                                placeholder="Username"/>
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                <input type="password"
+                                                value={this.state.password}
+                                                onChange={this.update('password')}
+                                                className="login-input"
+                                                placeHolder="Password"
+                                                />
+                                            </label>
+                                        </div>
+                                        <div className="login-form">
+                                            <div className="login-buttons">
+                                                <button onClick={this.handleSubmit}>{this.formButton()}</button>
+                                            </div>
+                                            <div className="login-buttons">
+                                                <p>----------------------  or  ----------------------</p>
+                                            </div>
+                                            <div className="login-buttons">
+                                                <button onClick={this.loadDemo}><h3>Guest Demo</h3></button>
+                                            </div>
+                                            <div className="login-buttonss">
+                                                <a href="/#" onClick={this.switchForms}>{this.switchButton()}</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
-                        </div>
                     </Modal>
 
             </nav>
