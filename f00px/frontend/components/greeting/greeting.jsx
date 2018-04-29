@@ -21,14 +21,20 @@ const style = {
     right           : '100px',
     bottom          : '100px',
     margin          : 'auto',
-    width           : '400px',
-    height          : '400px',
+    width           : '443px',
+    height          : '238px',
     padding         : '15px',
     zIndex          : 11
 
   }
 };
 
+const stylez = {
+  margin: '0px', 
+  height:  '125px', 
+  width: '192px',
+  border: '1px solid #0000004a'
+};
 
 const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
@@ -165,37 +171,40 @@ class Greeting extends React.Component {
     return(
       <div>
         <Modal 
-      contentLabel="UploadModal"
-      isOpen={this.state.modalOpen}
-      onRequestClose={this.closeModal}
-      shouldCloseOnOverlayClick={true}
-      ariaHideApp={false}
-      style={style}>
-        <form onSubmit={this.handleSubmit} className="photo-upload-form"> 
-          <div className="photo-upload">
-            <Dropzone
-              multiple={false}
-              accept="image/*"
-              onDrop={this.handleImageUpload}> 
-              {this.uploadedPhoto()}
-            </Dropzone> 
-          </div> 
+        contentLabel="UploadModal"
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.closeModal}
+        shouldCloseOnOverlayClick={true}
+        ariaHideApp={false}
+        style={style}>
+          <form onSubmit={this.handleSubmit} id="uplooo" className="photo-upload-form"> 
+            <div className="photo-upload">
+              <Dropzone
+                multiple={false}
+                accept="image/*"
+                onDrop={this.handleImageUpload}> 
+                {this.uploadedPhoto()}
+              </Dropzone> 
+            </div> 
 
-          <div> 
-            <div className="upload-description">
-              <label> <strong><u>Description</u></strong>
-                <br/>
-                <input type="text"
-                  value={this.state.description}
-                  onChange={this.update('description')}
-                  placeholder="Description"/>
-              </label>
-            </div>
-            {this.renderErrors()}
-            <input className="upload" type="submit" value="Upload"/>
-          </div> 
-        </form> 
-      </Modal>
+            <div className="upload-info"> 
+              <div className="upload-description">
+                <label>
+                   <strong>Description</strong>
+                  <br/>
+                  <div className="upload-errors">
+              
+                    {this.renderErrors()}
+                  </div>
+                  <div className="upload-input">
+                    <textarea style={stylez} value={this.state.description} onChange={this.update('description')} />
+                  </div>
+                </label>
+              </div>
+                <input className="upload" type="submit" value="Upload"/>
+            </div> 
+          </form> 
+        </Modal>
         {this.personalGreeting()}
       </div> 
     );
