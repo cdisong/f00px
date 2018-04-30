@@ -14,41 +14,16 @@ Route,
   Link,
   HashRouter
 } from 'react-router-dom';
+import { footer } from './splash/footer';
 
 export const App = () => (
-  <div> 
-    <nav>
-      <AuthRoute path="/" component={SessionFormContainer}/>
-      <Route path="/" component={GreetingContainer} />
-    </nav>
-    <header>
-    </header>
-      <Switch>
-        <Redirect from='/' to='/splash'/>
-        <Route path='/splash' component={SplashContainer}/>
-      </Switch>
-    <Switch>
-        <AuthRoute exact path="/splash" component={SplashContainer}/>
-      <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
-      <ProtectedRoute path="/profile" component={UserProfileContainer} />
-      <ProtectedRoute path="/users/:userId" component={UsersProfileContainer} />
-      
-    </Switch>
-
-     <Route exact path="/splash"
-      render={ () =>
-        <footer className="footer">
-          <section className="footer-left">
-            <h1>ASDJKF</h1>
-            <p>Hasjdfl;kasjdkfl;sajkldf;s a</p>
-          </section>
-          <section className="footer-right">
-            <a href="https://github.com/cdisong">Github</a>
-            <a href="https://www.linkedin.com/in/cdisong">LinkedIn</a>
-          </section>
-        </footer>
-      }
-    />
+  <div className="frontpage"> 
+    <AuthRoute path="/" component={SessionFormContainer}/>
+    <ProtectedRoute path="/" component={GreetingContainer} />
+    <Route exact path="/" component={SplashContainer} />
+    <ProtectedRoute path="/dashboard" component={PhotosIndexContainer} /> 
+    <ProtectedRoute path="/profile" component={UserProfileContainer} />
+    <ProtectedRoute path="/users/:userId" component={UsersProfileContainer} />
   </div> 
 ); 
 

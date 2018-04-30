@@ -170,7 +170,6 @@ class SessionForm extends React.Component {
                                 </div>
                             </form>
                     </Modal>
-
             </nav>
         );
     }

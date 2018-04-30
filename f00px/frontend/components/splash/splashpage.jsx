@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { route, Link, withRouter } from 'react-router-dom';
-
+import Footer from './footer';
 
 class SplashPage extends React.Component { 
   constructor(props){ 
@@ -20,18 +20,17 @@ class SplashPage extends React.Component {
  
   render() {
     return ( 
-      <div>
-        <section className="splash-page"> 
-          <section className="splash-page-text"> 
-            <section className="headers">
-              <h1>Welcome to F00PX</h1>
-              <h2>See photos from all around the world.</h2>
-            </section>
+      <section className="splash-page"> 
+        <div className="behind-hero">
+          <section className="splash-page-content">
+            <h1>Welcome to F00PX</h1>
+            <h2>See photos from all around the world.</h2>
             <button onClick={this.demoUser}>Demo Login</button>
-            <br/>
           </section>
-        </section>
-      </div>
+        </div>
+        <Footer />
+      </section>
+
     );
   }
 }
