@@ -20,11 +20,27 @@
 }
 
 .dashboard {
-  margin-right: 10px;
+  margin-right: 7px;
+  padding: 3px;
+  border-radius: 2px;
 }
 
+.dashboard:hover {
+  background-color: #9d8aa4;
+  color: white;
+}
+
+.dashboards:hover {
+  background-color: #816c85;
+  color: white;
+}
+
+
 .dashboards {
-  margin-right: 19px
+  padding: 3px;
+  margin-right: 16px;
+  border-radius: 2px;
+
 }
 
 
