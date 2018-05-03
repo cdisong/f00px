@@ -36,8 +36,11 @@ const stylez = {
   border: '1px solid #0000004a'
 };
 
-const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
+// const CLOUDINARY_UPLOAD_PRESET = 'jouq57th';
+// const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/cdisong/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'tj1eftvw';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/chrissong/upload';
+
 
 class Greeting extends React.Component {
   constructor(props) {
