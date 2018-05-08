@@ -47,7 +47,7 @@ class Greeting extends React.Component {
     super(props); 
     this.state = {
       image_url: "",
-      description: "", 
+      description: "",  
       modalOpen: false
     };
     this.handleImageUpload = this.handleImageUpload.bind(this); 
