@@ -28,6 +28,17 @@
   left: 38%;
 }
 
+.splash-page-words > button {
+  border-radius: 2px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.splash-page-words > button:hover {
+  background-color: #a99c9c3d;
+  
+} 
+
 .login-signup { 
   display: flex; 
   justify-content: space-between; 
@@ -120,5 +131,6 @@
 
 .login-buttons:hover {
   background-color: #a99c9c3d;
+
 }
 
