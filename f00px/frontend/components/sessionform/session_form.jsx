@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
     }
 
     formHeading() {
-        return (this.state.logIn) ? <h3>Log in to F00px</h3> : <h3>Join F00px</h3>;
+        return (this.state.logIn) ? <h3>Log in to FPX</h3> : <h3>Join FPX</h3>;
     }
 
     formButton() {
@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
     render() {
         return(
             <nav className="login-signup">
-                <div className="logo"> <h2>F00PX</h2></div>
+                <div className="logo"> <h2>FPX</h2></div>
                
                 <div className="splash-login-signup-buttons">
                    <div className="ls-buttons"><button onClick={this.openModal.bind(this, true)}>Log in</button></div> 

@@ -5,13 +5,22 @@ class Footer extends React.Component {
         return ( 
             <footer className="footer">
                 <section className="footer-left">
-                    <h1>F00PX</h1>
-                    <p>A photo-hosting web application inspired by 500px.</p> 
-                    <p>F00PX utilizes a PostgreSQL database, Ruby-on-Rails backend, and React.js/Redux frontend.</p>
+                    <div className="footer-left-header">
+                        <div>
+                        <i className="fa fa-camera-retro"></i>
+                        </div>
+                        <div><h1>FPX</h1></div>
+                    </div>
+                    <p>Fine Pixel, a photo-hosting web application inspired by 500px.</p> 
+                    <p>FPX utilizes a PostgreSQL database, Ruby-on-Rails backend, and React.js/Redux frontend.</p>
                 </section>
                 <section className="footer-right">
-                    <a href="https://github.com/cdisong">Github</a>
-                    <a href="https://www.linkedin.com/in/cdisong">Linkedin</a>
+                    <div>
+                        <i className="fa fa-github" aria-hidden="true"></i><a href="https://github.com/cdisong">   Github</a>
+                    </div>
+                    <div>
+                        <i className="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cdisong">   Linkedin</a> 
+                    </div>
                 </section>
             </footer>
         );

@@ -24,7 +24,7 @@ class SplashPage extends React.Component {
         <div className="behind-hero">
           <section className="splash-page-content">
             <div className="splash-page-words"> 
-              <h1>Welcome to F00PX</h1>
+              <h1>Welcome to FPX</h1>
               <h2>See photos from all around the world.</h2>
               <button onClick={this.demoUser}>Demo Login</button>
             </div>

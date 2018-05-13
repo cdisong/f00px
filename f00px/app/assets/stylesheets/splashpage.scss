@@ -56,7 +56,12 @@
   padding: 27px;
 }
 
+.footer-left-header {
+  display: flex;
+
+}
 .footer-left > h1 {
+  margin-left: 2px;
   font-size: 14px;
 }
 
@@ -75,6 +80,7 @@
   font-size: 15px;
   padding-top: 1px;
 }
+
 
 .splash-login-signup-buttons {
   display: flex;
