@@ -22,7 +22,7 @@ const style = {
       bottom          : '100px',
       margin          : 'auto',
       width           : '300px',
-      height          : '345px',
+      height          : '352px',
       padding         : '15px',
       zIndex          : 11
   
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
         return(
           <ul>
             {this.props.errors.session.map((error, i) => (
-              <li key={`error-${i}`}>
+              <li className="errrror" key={`error-${i}`}>
                 {error}
               </li>
             ))}
@@ -130,9 +130,14 @@ class SessionForm extends React.Component {
                             <form className="login-form-box">
                                 <div className="login-form-all">
                                     <div className="login-form-header">
-                                        {this.formHeading()}
-                                        {this.renderErrors()}
+                                        <div>
+                                            {this.formHeading()}
+                                        </div>
+                                        <div>
+                                            {this.renderErrors()}
+                                        </div>
                                     </div>
+                                    
                                     <div className="form-holder">
                                         <div className="login-f-input">
                                             <label>
@@ -156,9 +161,11 @@ class SessionForm extends React.Component {
                                             <div className="login-buttons">
                                                 <button onClick={this.handleSubmit}>{this.formButton()}</button>
                                             </div>
-                                            <div className="login-buttons">
+                                            <br/>
+                                            <div className="login-buttonsss">
                                                 <p>----------------------  or  ----------------------</p>
                                             </div>
+                                            <br/>
                                             <div className="login-buttons">
                                                 <button onClick={this.loadDemo}><h3>Guest Demo</h3></button>
                                             </div>

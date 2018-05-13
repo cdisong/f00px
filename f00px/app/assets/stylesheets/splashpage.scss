@@ -45,6 +45,11 @@
   padding: 5px;
 }
 
+.login-signup-button {
+  padding: 3px;
+  margin-right: 6px;
+  border-radius: 2px;
+}
 .footer {
   display: flex;
   justify-content: space-around;
@@ -75,23 +80,13 @@
   padding-bottom: 5px;
 }
 
-// .splash-page-text  {
-//   text-align: left; 
-//   font-size: 24px;
-//   position: absolute;
-//   top: 36%;
-//   left: 34%;
-//   transform: translate(-50%, -50%);
-//   margin: 10px 0px;
-// }
 
 .splash-page-text > h1 { 
   font-size: 30px;
 }
 
 .ls-buttons:hover {
-  background-color: #816c85;
-  color: white;
+  background-color: #a99c9c3d;
 }
 .splash-page-text > button {
   font-size: 18px;
@@ -114,13 +109,19 @@
 }
 
 .login-form-header { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 11px;
+  height: 74px;
 }
+
+
 .login-input {
-    border-radius: 2px;
-    padding: 4px;
-    margin-bottom: 10px;
-    background-color: #a99c9c3d;
+  border-radius: 2px;
+  padding: 4px;
+  margin-bottom: 10px;
+  background-color: #a99c9c3d;
 }
 
 .login-form {
@@ -129,8 +130,24 @@
   align-items: center;
 }
 
+.login-buttons > button {
+  margin: 0px 16px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  border-radius: 2px;
+}
 .login-buttons:hover {
   background-color: #a99c9c3d;
 
 }
 
+.login-buttonss > a:hover { 
+  text-decoration: underline;
+}
+
+.errrror {
+  font-size: 13px;
+  margin-top: -9px;
+  
+  color: red;
+}
