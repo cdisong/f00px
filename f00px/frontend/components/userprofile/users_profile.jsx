@@ -117,18 +117,22 @@ class UsersProfile extends React.Component {
                 <div className="image_user">
                   <img src={this.state.user.profile_img_url}/>
                 </div>
+                <div className="user-info">
                   {this.state.user.username}
-                <br/>                
-                <br/>
+                  <br/>                
+                  <br/>
                   {this.state.user.description}
                   <br/>
                   <br/>
-                  <div className="follower-button">
-                  <button onClick={this.openFollowerModal}>Followers</button>
+                </div>
+                <div className="guh">
+                  <div className="profile-modal-buttons">
+                    <button onClick={this.openFollowerModal}>{this.state.followers.length} Followers</button>
                   </div>
-                  <div className="follower-button">
-                  <button onClick={this.openFollowingModal}>Following</button>
+                  <div className="profile-modal-buttons">
+                    <button onClick={this.openFollowingModal}>{this.state.following.length} Following</button>
                   </div>
+                </div>
               </div>
               </section>
             </section>
