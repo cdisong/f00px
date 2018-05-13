@@ -56,9 +56,24 @@
   padding: 27px;
 }
 
+.footer-left > h1 {
+  font-size: 14px;
+}
+
+.footer-left > p {
+  font-size: 12px;
+}
+
 .footer-right{
   display: flex;
   flex-direction: column;
+  margin-left: 5px; 
+  margin-top: 5px;
+}
+
+.footer-right > a {
+  font-size: 15px;
+  padding-top: 1px;
 }
 
 .splash-login-signup-buttons {
