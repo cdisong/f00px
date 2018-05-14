@@ -6,12 +6,11 @@ class Footer extends React.Component {
             <footer className="footer">
                 <section className="footer-left">
                     <div className="footer-left-header">
-                        <div>
-                        <i className="fa fa-camera-retro"></i>
+                        <div className="ughreally">
                         </div>
                         <div><h1>FPX</h1></div>
                     </div>
-                    <p>Fine Pixel, a photo-hosting web application inspired by 500px.</p> 
+                    <p>Fine Pixels, a photo-hosting web application inspired by 500px.</p> 
                     <p>FPX utilizes a PostgreSQL database, Ruby-on-Rails backend, and React.js/Redux frontend.</p>
                 </section>
                 <section className="footer-right">

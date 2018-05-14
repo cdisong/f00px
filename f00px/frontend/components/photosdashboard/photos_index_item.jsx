@@ -63,7 +63,6 @@ class PhotoIndexItem extends React.Component {
           contentLabel="Modal"
           ariaHideApp={false}
           style={style}> 
-         <strong className="x-button"><button onClick={this.closePhotoDetail}>x</button></strong>
          <br/>
           <div className="detail-view">
             <div className="images">

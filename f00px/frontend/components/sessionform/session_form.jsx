@@ -22,7 +22,7 @@ const style = {
       bottom          : '100px',
       margin          : 'auto',
       width           : '300px',
-      height          : '352px',
+      height          : '356px',
       padding         : '15px',
       zIndex          : 11
   
@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
     }
 
     formHeading() {
-        return (this.state.logIn) ? <h3>Log in to FPX</h3> : <h3>Join FPX</h3>;
+        return (this.state.logIn) ? <h3>Log in to Fine Pixels</h3> : <h3>Join Fine Pixels</h3>;
     }
 
     formButton() {
@@ -163,7 +163,7 @@ class SessionForm extends React.Component {
                                             </div>
                                             <br/>
                                             <div className="login-buttonsss">
-                                                <p>----------------------  or  ----------------------</p>
+                                                <p>----------------  or  -----------------</p>
                                             </div>
                                             <br/>
                                             <div className="login-buttons">

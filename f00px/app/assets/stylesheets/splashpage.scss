@@ -12,6 +12,9 @@
   width: 100%;
 }
 
+// .ughreally { 
+//   background: image-url("FPX3.svg")
+// }
 .splash-page-content {
   background: image-url("clouds.jpeg");
   height: 100%;
@@ -21,6 +24,7 @@
 
 .splash-page-words {
   display: flex;
+  font-family: 'Montserrat', sans-serif;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -41,6 +45,7 @@
 
 .login-signup { 
   display: flex; 
+  font-family: 'Montserrat', sans-serif;
   justify-content: space-between; 
   padding: 5px;
 }
@@ -57,27 +62,43 @@
 }
 
 .footer-left-header {
+
+  font-family: 'Montserrat', sans-serif;
   display: flex;
 
 }
 .footer-left > h1 {
+  font-family: 'Montserrat', sans-serif;
+
   margin-left: 2px;
   font-size: 14px;
 }
 
+.detail-view {
+  font-family: 'Raleway', sans-serif;
+
+}
+.followers-contatiner { 
+  font-family: 'Montserrat', sans-serif;
+
+}
 .footer-left > p {
+  font-family: 'Raleway', sans-serif;
   font-size: 12px;
 }
 
 .footer-right{
   display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   flex-direction: column;
   margin-left: 5px; 
   margin-top: 5px;
 }
 
 .footer-right > a {
-  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+
   padding-top: 1px;
 }
 
@@ -124,6 +145,8 @@
 
 .login-form-all {
   display: flex;
+  font-family: 'Raleway', sans-serif;
+
   flex-direction: column;
   align-items: center;
   border: solid 1px;
